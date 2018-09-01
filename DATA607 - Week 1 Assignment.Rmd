@@ -1,0 +1,101 @@
+---
+title: "DATA607 - Week 1 Assignment"
+author: "Adam Douglas"
+date: "9/1/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(forcats)
+require(RColorBrewer)
+```
+
+## The Data
+
+The mushroom data set[^1] is a well-known example data set used frequently by people learning R for the first time. Sourced from The Audubon Society Field Guide to North American Mushrooms[^2], it contains 22 variables describing each type of mushroom as well as a classification indicating that it is poisonous (P) or edible (E).
+
+```{r load,warning=FALSE}
+# Load dataset from the UCI repository
+mushrooms <- read_csv(url("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data"), col_names=FALSE, na='?')
+
+# Add names to the dataset
+names(mushrooms) <- c("category","capShape","capSurface","capColor","bruises","odor","gillAttachment","gillSpacing","gillSize","gillColor","stalkShape","stalkRoot","stalkSurfaceAbove","stalkSurfaceBelow","stalkColorAbove","stalkColorBelow","veilType","veilColor","ringNumber","ringType","sporePrintColor","population","habitat")
+
+# Add some factors
+mushrooms$category <- factor(mushrooms$category, levels=c("p","e"), labels=c("Poisonous","Edible"))
+
+mushrooms$capColor <- factor(mushrooms$capColor, levels=c("n","b","c","g","r","p","u","e","w","y"), labels=c("brown","buff","cinnamon","grey","green","pink","purple","red","white","yellow"))
+
+mushrooms$capShape <- factor(mushrooms$capShape, levels = c("b","c","x","f","k","s"), labels = c("bell","conical","convex","flat","knobbed","sunken"))
+
+mushrooms$odor <- factor(mushrooms$odor, levels = c("almond","anise","creosote","fishy","foul","musty","none","pungent","spicy"))
+```
+
+Looking at the data, there are a somewhat even split of poisonous and non-poisonous mushrooms respresented:
+
+```{r chart1, echo=FALSE}
+ggplot(data=mushrooms) + geom_bar(mapping = aes(x=category), fill=c("firebrick3","forestgreen")) + ggtitle("Mushrooms","Edible vs. Poisonous") + labs(fill="Category")
+```
+
+## Analysis
+
+Narrowing down the dataset to a few easy-to-recognize features, we want to see if there is an easy rule of thumb to know when a mushroom is edible.
+
+```{r subset}
+shrooms <- mushrooms %>% select(category, capShape, capColor, odor)
+```
+
+### Cap Color
+First, let's look at color of the cap:
+
+```{r, echo = FALSE, out.width = "200px", fig.align="center"}
+knitr::include_graphics("https://github.com/lysanthus/Data607/blob/master/mushroomCap.jpg?raw=true")
+```
+<center> *A sample mushroom cap* </center>
+
+```{r}
+# Vector of colors
+cols <- c("saddlebrown","bisque2","peru","grey","green","pink","purple","red","white","yellow")
+
+# Plot the cap colors
+ggplot(data=shrooms) + geom_bar(mapping=aes(x=category, fill=capColor)) + scale_fill_manual(values = cols) + ggtitle("Mushroom Cap Colors","Edible vs. Poisonous") + labs(fill="Cap Color")
+```
+
+It appears that unless you happen upon a purple or green-capped mushroom, the odds are not in your favor that it is edible. At best the white-capped mushrooms are about 70% likely to be edible - not a chance I'd be willing to take:
+```{r}
+shrooms %>% filter(capColor == "white") %>% {prop.table(table(.$category))}
+```
+
+### Cap Shape
+Now on to the shape of the cap. Is there some general rule we can make about a mushroom's safety based on the shape of the cap, rather than color?
+
+```{r}
+# Plot the cap shapes
+ggplot(data=shrooms) + geom_bar(mapping=aes(x=category, fill=capShape)) + scale_colour_brewer(palette = "Set3") + ggtitle("Mushroom Cap Shape","Edible vs. Poisonous") + labs(fill="Cap Shape")
+```
+
+Here we see (again) that there is no truly safe shape except the few sunken-capped mushrooms:
+
+```{r}
+shrooms %>% filter(capShape == "sunken") %>% {prop.table(table(.$category))}
+```
+
+Bell-shaped caps look semi-safe:
+
+```{r}
+shrooms %>% filter(capShape == "bell") %>% {round(prop.table(table(.$category)),3)}
+```
+but even a nearly-90% chance is still dicey unless there's no real choice offered to you (say, a survival situation).
+
+Looking deeper at the bell shape, is there a combination of color and shape that can help us a bit more?
+
+```{r}
+shrooms %>% filter(capShape == "bell") %>% {round(prop.table(table(.$category,.$capColor), margin=2),3)}
+```
+
+It appears that yellow AND bell-shaped is the most safe combination
+
+[^1]: https://archive.ics.uci.edu/ml/datasets/Mushroom
+[^2]: The Audubon Society Field Guide to North American Mushrooms (1981). G. H. Lincoff (Pres.), New York: Alfred A. Knopf
