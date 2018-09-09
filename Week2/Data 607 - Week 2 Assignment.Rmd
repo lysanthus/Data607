@@ -11,6 +11,12 @@ blockquote
   font-size: 9pt;
 }
 
+img
+{
+  width: 60%;
+  height: 60%;
+}
+
 h2
 {
   text-decoration: underline;
@@ -39,9 +45,8 @@ We begin by creating a database to store our movies, raters, and ratings in. For
 ### The Structure
 
 The structure of the database will be simple enough. One table with movies in it, one with people who see one or more of the movies, and an associative table with each person's ratings. Below is a basic ER diagram outlining the general structure:
-
-```{r, echo=FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/lysanthus/Data607/master/Week 2/db.png")
+```{r}
+knitr::include_graphics("db.png")
 ```
 
 ### The Code
