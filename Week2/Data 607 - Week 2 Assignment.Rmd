@@ -1,4 +1,6 @@
 ---
+params:
+  password: Tigger-7725
 output:
   pdf_document: default
   html_document: default
@@ -38,8 +40,8 @@ We begin by creating a database to store our movies, raters, and ratings in. For
 
 The structure of the database will be simple enough. One table with movies in it, one with people who see one or more of the movies, and an associative table with each person's ratings. Below is a basic ER diagram outlining the general structure:
 
-```{r, out.width = "500px", out.height="500px", echo=FALSE}
-knitr::include_graphics("https://github.com/lysanthus/Data607/blob/master/Week%202/Movie%20Database.png?raw=true")
+```{r, echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/lysanthus/Data607/master/Week 2/db.png")
 ```
 
 ### The Code
@@ -81,10 +83,6 @@ Note that the ratings table has a few constraints on it. First it uses foreign k
 ## The Data
 Now that we have the data loaded into our database, we will need to query it to do any kind of analysis. We begin by loading the package we'll use to connect to the PostgreSQL database and setting up some basic variables with information about the database itself (such as user, password, what port it is running on, etc.):
 
-```{r, echo=FALSE}
-pass <- "Tigger-7725"
-```
- 
 ```{r}
 # Load the package to connect
 library(RPostgreSQL)
@@ -92,7 +90,7 @@ library(RPostgreSQL)
 # Variables to create the connection
 host <- "localhost"
 usr <- "postgres"
-#pass <- <your password here>
+pass <- params$password
 port <- 5432
 database <- "movies"
 ```

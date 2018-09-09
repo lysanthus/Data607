@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.19)  8 SEP 2018 19:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.19)  8 SEP 2018 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,16 +631,23 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Runaway argument?
-{https://github.com/lysanthus/Data607/blob/master/Week
-! Paragraph ended before \Gin@ii was complete.
-<to be read again> 
-                   \par 
-l.146 
-       
+
+LaTeX Warning: File `https://raw.githubusercontent.com/lysanthus/Data607/master
+/Week\%202/db.png' not found on input line 145.
+
+
+! Package pdftex.def Error: File `https://raw.githubusercontent.com/lysanthus/D
+ata607/master/Week\%202/db.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...ysanthus/Data607/master/Week\%202/db.png}
+                                                   
 Here is how much of TeX's memory you used:
- 12249 strings out of 494091
- 179629 string characters out of 6163523
+ 12250 strings out of 494091
+ 179865 string characters out of 6163523
  282837 words of memory out of 5000000
  15805 multiletter control sequences out of 15000+600000
  24517 words of font info for 30 fonts, out of 8000000 for 9000

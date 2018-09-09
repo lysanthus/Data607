@@ -142,7 +142,7 @@ movies in it, one with people who see one or more of the movies, and an
 associative table with each person's ratings. Below is a basic ER
 diagram outlining the general structure:
 
-\includegraphics[width=500px,height=500px]{https://github.com/lysanthus/Data607/blob/master/Week%202/Movie%20Database.png?raw=true}
+\includegraphics{https://raw.githubusercontent.com/lysanthus/Data607/master/Week\%202/db.png}
 
 \subsubsection{The Code}\label{the-code}
 
@@ -197,7 +197,7 @@ user, password, what port it is running on, etc.):
 \CommentTok{# Variables to create the connection}
 \NormalTok{host <-}\StringTok{ "localhost"}
 \NormalTok{usr <-}\StringTok{ "postgres"}
-\CommentTok{#pass <- <your password here>}
+\NormalTok{pass <-}\StringTok{ }\NormalTok{params}\OperatorTok{$}\NormalTok{password}
 \NormalTok{port <-}\StringTok{ }\DecValTok{5432}
 \NormalTok{database <-}\StringTok{ "movies"}
 \end{Highlighting}
@@ -344,7 +344,7 @@ Let's look at everyone's ratings, regardless of the movie:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data_607_-_Week_2_Assignment_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{Data_607_-_Week_2_Assignment_files/figure-latex/unnamed-chunk-9-1.pdf}
 
 Looking at the distribution of ratings, it appears that I (Adam) tend to
 rate high (only 4's or 5's) and my wife (April) tends to rate more
@@ -441,7 +441,7 @@ ratings by person and movie in one graphic:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Data_607_-_Week_2_Assignment_files/figure-latex/unnamed-chunk-15-1.pdf}
+\includegraphics{Data_607_-_Week_2_Assignment_files/figure-latex/unnamed-chunk-14-1.pdf}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
