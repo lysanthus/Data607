@@ -1,6 +1,6 @@
 ---
 params:
-  password: Tigger-7725
+  password: 
 output:
   pdf_document: default
   html_document: default
