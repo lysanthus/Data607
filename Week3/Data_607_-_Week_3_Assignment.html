@@ -150,12 +150,17 @@ name</code></pre>
 
 first &lt;- str_trim(str_extract(name,&quot;(\\w+ )|(\\w{1}\\. )?+(\\w+$)&quot;))
 
-# So, the last name is either the word before the comma or
+first</code></pre>
+<pre><code>## [1] &quot;Moe&quot;           &quot;C. Montgomery&quot; &quot;Timothy&quot;       &quot;Ned&quot;          
+## [5] &quot;Homer&quot;         &quot;Julius&quot;</code></pre>
+<pre class="r"><code># So, the last name is either the word before the comma or
 #   the word at the end of the string
 
 last &lt;- str_extract(name,&quot;(\\w+,)|(\\w+$)&quot;)
 
-# Now we can combine into one vector
+last</code></pre>
+<pre><code>## [1] &quot;Szyslak&quot;  &quot;Burns,&quot;   &quot;Lovejoy&quot;  &quot;Flanders&quot; &quot;Simpson,&quot; &quot;Hibbert&quot;</code></pre>
+<pre class="r"><code># Now we can combine into one vector
 firstLast &lt;- str_c(first,&quot; &quot;,last)
 
 firstLast</code></pre>
@@ -194,10 +199,11 @@ twoNames</code></pre>
 <li><p><code>&lt;(.+?)&gt;.+?&lt;/\\1&gt;</code></p>
 This regex matches HTML tags such as “
 <tr>
-Row 1
+Row Title
 </tr>
 <p>&quot; since it looks for angle brackets with any characters inside, characters after that, and the same angle-bracket text with a / added to the beginning (closing tag).</p></li>
 </ol>
+<hr />
 </div>
 
 

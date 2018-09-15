@@ -34,10 +34,14 @@ name
 
 first <- str_trim(str_extract(name,"(\\w+ )|(\\w{1}\\. )?+(\\w+$)"))
 
+first
+
 # So, the last name is either the word before the comma or
 #   the word at the end of the string
 
 last <- str_extract(name,"(\\w+,)|(\\w+$)")
+
+last
 
 # Now we can combine into one vector
 firstLast <- str_c(first," ",last)
@@ -88,5 +92,6 @@ twoNames
 
 (e) `<(.+?)>.+?</\\1>`
 
-    This regex matches HTML tags such as "<tr>Row 1</tr>" since it looks for angle brackets with any characters inside, characters after that, and the same angle-bracket text with a / added to the beginning (closing tag).
+    This regex matches HTML tags such as "<tr>Row Title</tr>" since it looks for angle brackets with any characters inside, characters after that, and the same angle-bracket text with a / added to the beginning (closing tag).
 
+***
