@@ -2,7 +2,9 @@
 title: "Project 1"
 author: "Adam Douglas"
 date: "9/16/2018"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -125,7 +127,7 @@ data$oppMean <- round(apply(opp,1,mean, na.rm=TRUE),0)
 
 We have all of the data elements we need and can now export to a CSV file:
 
-```{r, eval=FALSE}
+```{r}
 # Select and export our fields
 data %>% select(name,state,points,rating,oppMean) %>% write_csv("data.csv", col_names=FALSE)
 ```
