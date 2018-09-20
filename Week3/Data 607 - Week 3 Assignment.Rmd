@@ -2,7 +2,9 @@
 title: "DATA 607 - Week 3 Assignment"
 author: "Adam Douglas"
 date: "9/11/2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -13,9 +15,20 @@ library(stringr)
 ## Problems
 
 **3. Copy the introductory example. The vector `names` stores the extracted names.**
-
-```{r}
+```{r, eval=FALSE}
 # Introductory text
+
+raw.data <-"555-1239Moe Szyslak(636) 555-0113Burns, C. Montgomery555-6542
+Rev. Timothy Lovejoy555 8904Ned Flanders636-555-3226Simpson, Homer5553642
+Dr. Julius Hibbert"
+
+name <- unlist(str_extract_all(raw.data, "[[:alpha:]., ]{2,}"))
+
+name
+```
+
+```{r, echo=FALSE, results='asis'}
+# Actual code. The above was for display in PDF
 
 raw.data <-"555-1239Moe Szyslak(636) 555-0113Burns, C. Montgomery555-6542Rev. Timothy Lovejoy555 8904Ned Flanders636-555-3226Simpson, Homer5553642Dr. Julius Hibbert"
 
@@ -92,6 +105,6 @@ twoNames
 
 (e) `<(.+?)>.+?</\\1>`
 
-    This regex matches HTML tags such as "<tr>Row Title</tr>" since it looks for angle brackets with any characters inside, characters after that, and the same angle-bracket text with a / added to the beginning (closing tag).
+    This regex matches HTML tags such as `<tr>Row Title</tr>` since it looks for angle brackets with any characters inside, characters after that, and the same angle-bracket text with a / added to the beginning (closing tag).
 
 ***
