@@ -135,6 +135,8 @@ US %>% ggplot(aes(x=Year, y=millionPeople)) +
   ggtitle("United States Migrant Population")
 ```
 
+***
+
 #### Example 2
 The next example is taken from the Department of Education's National Student Loan Data System (NSLDS)[^3]. The specific file is a portfolio summary showing outstanding interest and balances by acedemic year and loan type.
 
@@ -252,10 +254,54 @@ tidyLoan %>%
 
 Looking at these graphs, it appears that there is more outstanding balance over time than can be explained by simply having more students. One may conclude that there is another variable at work here, perhaps cost of education is rising? Further analysis would be required to confirm or deny that.
 
+***
+
+## Example 3
+This final example comes from the NYS Data website [^4] and is a list of Supplemental Nutrition Assistance Program (SNAP) caseloads and expenditures. This program, previously referred to as "food stamps" is an important safety net low-income families and children.
+
+### Raw Data
+Because we have the data in a CSV format, we can pull it directly from GitHub:
+
+```{r get SNAP data, message=FALSE}
+SNAP <- read_csv(url("https://raw.githubusercontent.com/lysanthus/Data607/master/Project2/SNAP.csv"),col_names = TRUE)
+
+SNAP
+```
+
+Looking at our raw CSV data, we can see that the data is broken out into years and months and divided by county. Furthermore, there are 3 types of observations stored as variable types: "Temporary-Assistance", "Non-Temporary Assistance" and "Total".
+
+### Tidying
+
+Because we have a relatively "clean" dataset, we can proceed with reshaping it into a tidy format. We will use a similar methodology that we used in example 2 above.
+
+```{r tidy SNAP}
+# Move all into a single column
+tidySNAP <- gather(SNAP, key="type", value="amount", 6:14)
+
+# Get the word "SNAP" out so we normalize the names
+tidySNAP$type <- str_replace(tidySNAP$type,"\\s{1}(SNAP)","")
+
+# Now split the "type" column, because it really contains two variable types
+tidySNAP <- 
+  tidySNAP %>%
+  extract(type, c("loanType", "measure"),"([[:alpha:]]+)\\s{1}(.+)")
+
+# Then spread those into their respective columns
+tidyLoan <- tidyLoan %>% spread(measure, amount)
+
+# Finally, fix column names and column types
+tidyLoan <- rename(tidyLoan, dollars = `Dollars Outstanding`, recipients = Recipients)
+
+tidyLoan$dollars <- as.numeric(tidyLoan$dollars)
+
+tidyLoan$recipients <- as.numeric(tidyLoan$recipients)
+
+tidyLoan
+```
 
 
 
 [^1]: http://vita.had.co.nz/papers/tidy-data.pdf
 [^2]: http://www.un.org/en/development/desa/population/migration/data/estimates2/estimates17.shtml
 [^3]: https://catalog.data.gov/dataset/national-student-loan-data-system/resource/02a63933-37ef-4b14-a45a-90dd7b523b29
-
+[^4]: https://data.ny.gov/Human-Services/Supplemental-Nutrition-Assistance-Program-SNAP-Cas/dq6j-8u8z
