@@ -2,7 +2,9 @@
 title: "DATA 607 - Project 2"
 author: "Adam Douglas"
 date: "Due 10/7/2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -137,7 +139,7 @@ US %>% ggplot(aes(x=Year, y=millionPeople)) +
 
 ***
 
-#### Example 2
+## Example 2
 The next example is taken from the Department of Education's National Student Loan Data System (NSLDS)[^3]. The specific file is a portfolio summary showing outstanding interest and balances by acedemic year and loan type.
 
 ### Raw Data
@@ -268,7 +270,7 @@ SNAP <- read_csv(url("https://raw.githubusercontent.com/lysanthus/Data607/master
 SNAP
 ```
 
-Looking at our raw CSV data, we can see that the data is broken out into years and months and divided by county. Furthermore, there are 3 types of observations stored as variable types: "Temporary-Assistance", "Non-Temporary Assistance" and "Total".
+Looking at our raw CSV data, we can see that the data is broken out into years and months and divided by county. Furthermore, there are 3 types of observations stored as variable types: "Temporary-Assistance", "Non-Temporary Assistance" and "Total". We also have 3 actual variables: "Households", "Persons", "Benefits".
 
 ### Tidying
 
@@ -281,22 +283,72 @@ tidySNAP <- gather(SNAP, key="type", value="amount", 6:14)
 # Get the word "SNAP" out so we normalize the names
 tidySNAP$type <- str_replace(tidySNAP$type,"\\s{1}(SNAP)","")
 
+# Get the word "Assistance" out so we normalize the names
+tidySNAP$type <- str_replace(tidySNAP$type,"\\s{1}(Assistance)","")
+
 # Now split the "type" column, because it really contains two variable types
 tidySNAP <- 
   tidySNAP %>%
-  extract(type, c("loanType", "measure"),"([[:alpha:]]+)\\s{1}(.+)")
+  extract(type, c("benefitType", "measure"),"([-[:alpha:]]+)\\s{1}(.+)")
 
 # Then spread those into their respective columns
-tidyLoan <- tidyLoan %>% spread(measure, amount)
+tidySNAP <- tidySNAP %>% spread(measure, amount)
 
-# Finally, fix column names and column types
-tidyLoan <- rename(tidyLoan, dollars = `Dollars Outstanding`, recipients = Recipients)
+tidySNAP
+```
 
-tidyLoan$dollars <- as.numeric(tidyLoan$dollars)
+Now we have a proper tidy data set to analyze.
 
-tidyLoan$recipients <- as.numeric(tidyLoan$recipients)
+### Analysis
 
-tidyLoan
+First, let's look at how many dollars are being spent per year:
+
+```{r SNAP per year}
+tidySNAP %>% 
+    filter(benefitType == "Total") %>%
+    group_by(Year) %>% summarize(spend = sum(Benefits, rm.na=TRUE)/1000000000,
+                                 people = sum(Persons, rm.na=TRUE), 
+                                 perPerson = spend/people) %>%
+    ggplot() +
+    geom_col(aes(x=Year, y=spend),fill= "darkgreen") +
+    ggtitle("Total NYS SNAP Spending (statewide)") +
+    xlab("Year") + ylab("Dollars (billions)")
+```
+
+This gives us some idea of the total amounts being spent, though there is no evidence that these numbers are adjusted for inflation in any way.
+
+We could also compare the dollars per resident of each county to get a per-capita spending value (with the assistance of a census dataset).
+
+```{r, message=FALSE}
+# Get the census data
+census <- read_csv(url(
+  "https://raw.githubusercontent.com/lysanthus/Data607/master/Project2/census.csv"),
+  col_names = TRUE)
+
+# We're going to limit to 2017 only
+census <- census %>% filter(Year == 2017, Geography != "New York State")
+
+# Remove the word "County" for easy joining
+census$Geography <- str_replace(census$Geography,"\\sCounty","")
+
+# Same thing with the SNAP data
+SNAP2017 <- tidySNAP %>% 
+        filter(benefitType == "Total", Year == "2017") %>%
+        group_by(Year, District) %>% summarize(spend = sum(Benefits, rm.na=TRUE),
+                                 people = mean(Persons, rm.na=TRUE))
+
+# Join the datasets and get some measures
+SNAPbyCounty <-
+  left_join(SNAP2017,census, by=c("District"="Geography")) %>%
+  select(year = Year.x, county= District, spend, people, population = Population) %>%
+  mutate(spendPC = round(spend / population,2), recipPC = (people / population))
+
+top10SNAP <- SNAPbyCounty %>% top_n(10,spendPC) %>% arrange(desc(spendPC)) %>%
+  select(year, county, spendPC)
+
+kable(top10SNAP, col.names = c("Year","County","Spend per Capita"), 
+      caption="Top 10 Total SNAP Spending by County (2017)") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE, position = "left")
 ```
 
 
