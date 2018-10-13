@@ -1,8 +1,8 @@
 {
 	"favorite books": [{
-		"title": "The Name of the Wind",
-		"authors": ["Patrick Rothfuss"],
-		"published": 2007,
-		"pages": 662
+		"title": "Assassin's Apprentice",
+		"authors": ["Robin Hobb"],
+		"published": 1995,
+		"pages": 400
 	}]
 }

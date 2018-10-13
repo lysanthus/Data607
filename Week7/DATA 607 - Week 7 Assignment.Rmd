@@ -1,0 +1,81 @@
+---
+title: "Week 7 Assignment"
+author: "Adam Douglas"
+date: "10/13/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RCurl)
+library(XML)
+library(RJSONIO)
+```
+
+## Books
+
+I am an avid reader and have been for many years. I've always tended towards the fantasy genre, so my choices of "favorites" reflect that preference. Some of these choices I read early in life, some more recently, but each one I have read at least a few times and enjoy them all over again each time I do.
+
+### First Book
+
+The first, and probably most influential book, I loaded into an HTML table. With the XML package, I can retreive it and parse it into a data frame:
+
+```{r book1}
+# GitHub location
+loc <- "https://raw.githubusercontent.com/lysanthus/Data607/master/Week7/book1.html"
+
+# Get the HTML
+html <- getURL(loc)
+
+# Parse the HTML
+book <- htmlParse(html)
+
+# Get the table headers as column names
+headers <- xpathSApply(book,"//th",xmlValue)
+
+# Get the table data for actual book info
+data <- xpathSApply(book,"//td",xmlValue)
+
+# Combine into a data frame. Note we had to change the data to a single row.
+#   If there had been more than one book, we may have had to take a different
+#   approach.
+book1 <- data.frame(rbind(data), stringsAsFactors = FALSE, row.names="Book1")
+
+colnames(book1) <- headers
+
+book1
+```
+
+This book, `r book1[1,1]`, was more or less my gateway into the genre of fantasy fiction. I still like to revisit this (and the others in its trilogy) every few years. In, fact, I may be due for another read.
+
+### Second Book
+
+For my second book, I chose a true classic - a book likely on the shelves of many, even those not particularly enamoured with the fantasy genre.
+
+This book, I loaded into a simple XML file.
+
+```{r book2}
+# GitHub Location
+loc <- "https://raw.githubusercontent.com/lysanthus/Data607/master/Week7/book2.xml"
+
+# Get the XML
+xml <- getURL(loc)
+
+# Parse the HTML
+book <- xmlParse(xml)
+
+# Get the fields
+data <- data.frame(rbind(xpathSApply(book,"//book/child::*",xmlValue)))
+
+# The column names
+headers <- c("title","author","published","pages")
+
+book2 <- data.frame(rbind(data), stringsAsFactors = FALSE, row.names="Book2")
+
+colnames(book2) <- headers
+
+book2
+
+```
+
+This book, `r book2$title` is a classic and a must-read for any serious fan of fantasy literature. 
