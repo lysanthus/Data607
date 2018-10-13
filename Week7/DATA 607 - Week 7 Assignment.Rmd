@@ -12,7 +12,7 @@ library(XML)
 library(RJSONIO)
 ```
 
-## Books
+## The Individual Books
 
 I am an avid reader and have been for many years. I've always tended towards the fantasy genre, so my choices of "favorites" reflect that preference. Some of these choices I read early in life, some more recently, but each one I have read at least a few times and enjoy them all over again each time I do.
 
@@ -65,7 +65,7 @@ xml <- getURL(loc)
 book <- xmlParse(xml)
 
 # Get the fields
-data <- data.frame(rbind(xpathSApply(book,"//book/child::*",xmlValue)))
+data <- xpathSApply(book,"//book/child::*",xmlValue)
 
 # The column names
 headers <- c("title","author","published","pages")
@@ -78,4 +78,65 @@ book2
 
 ```
 
-This book, `r book2$title` is a classic and a must-read for any serious fan of fantasy literature. 
+This book, `r book2$title` is a classic and a must-read for any serious fan of fantasy literature.
+
+### Third Book
+
+For the third book, I chose the first of a trilogy I only recently read. Few books developed characters quite as engaging as this did, and the world the author created was rather unique from other novels.
+
+This book I placed into a JSON file.
+
+```{r book3}
+# GitHub Location
+loc <- "https://raw.githubusercontent.com/lysanthus/Data607/master/Week7/book3.json"
+
+# Get the JSON
+json <- getURL(loc)
+
+# Parse the JSON
+book <- fromJSON(content=json)
+
+# Get the fields
+data <- unlist(book, recursive = TRUE)
+
+# The column names
+headers <- c("title","author","published","pages")
+
+book3 <- data.frame(rbind(data), stringsAsFactors = FALSE, row.names="Book3")
+
+colnames(book3) <- headers
+
+book3
+```
+
+When I discovered `r book3$author`, I was surprised that I had not heard of her books before. They instantly drew me in and captured my imagination throughout the two trilogies.
+
+## Analysis
+
+HTML and XML use similar approaches to parsing, while JSON is slightly different. Neither is particularly difficult to do (though I suspect multiple entries in each are a bit trickier to coax into a data frame).
+
+A far as the individual data frames, each are slightly different in that they have different column names (which I could have manually fixed), but otherwise the same:
+
+```{r}
+str(book1)
+str(book2)
+str(book3)
+```
+
+Each variable is imported as a character, which is ok for now and can be coerced into its proper type later if we were to combine them into a single dataframe:
+
+```{r allbooks}
+# Fix column names for book1
+names(book1) <- c("title","author","published","pages")
+
+# Bind into a single data frame
+books <- rbind(book1,book2,book3)
+
+# Fix columns
+books$published <- as.numeric(books$published)
+books$pages <- as.numeric(books$pages)
+
+books
+```
+
+***

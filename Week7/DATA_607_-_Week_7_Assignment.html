@@ -129,8 +129,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="books" class="section level2">
-<h2>Books</h2>
+<div id="the-individual-books" class="section level2">
+<h2>The Individual Books</h2>
 <p>I am an avid reader and have been for many years. I’ve always tended towards the fantasy genre, so my choices of “favorites” reflect that preference. Some of these choices I read early in life, some more recently, but each one I have read at least a few times and enjoy them all over again each time I do.</p>
 <div id="first-book" class="section level3">
 <h3>First Book</h3>
@@ -178,7 +178,7 @@ xml &lt;- getURL(loc)
 book &lt;- xmlParse(xml)
 
 # Get the fields
-data &lt;- data.frame(rbind(xpathSApply(book,&quot;//book/child::*&quot;,xmlValue)))
+data &lt;- xpathSApply(book,&quot;//book/child::*&quot;,xmlValue)
 
 # The column names
 headers &lt;- c(&quot;title&quot;,&quot;author&quot;,&quot;published&quot;,&quot;pages&quot;)
@@ -192,6 +192,78 @@ book2</code></pre>
 ## Book2 The Fellowship Of The Ring J.R.R. Tolkien      1954   423</code></pre>
 <p>This book, The Fellowship Of The Ring is a classic and a must-read for any serious fan of fantasy literature.</p>
 </div>
+<div id="third-book" class="section level3">
+<h3>Third Book</h3>
+<p>For the third book, I chose the first of a trilogy I only recently read. Few books developed characters quite as engaging as this did, and the world the author created was rather unique from other novels.</p>
+<p>This book I placed into a JSON file.</p>
+<pre class="r"><code># GitHub Location
+loc &lt;- &quot;https://raw.githubusercontent.com/lysanthus/Data607/master/Week7/book3.json&quot;
+
+# Get the JSON
+json &lt;- getURL(loc)
+
+# Parse the JSON
+book &lt;- fromJSON(content=json)
+
+# Get the fields
+data &lt;- unlist(book, recursive = TRUE)
+
+# The column names
+headers &lt;- c(&quot;title&quot;,&quot;author&quot;,&quot;published&quot;,&quot;pages&quot;)
+
+book3 &lt;- data.frame(rbind(data), stringsAsFactors = FALSE, row.names=&quot;Book3&quot;)
+
+colnames(book3) &lt;- headers
+
+book3</code></pre>
+<pre><code>##                       title     author published pages
+## Book3 Assassin's Apprentice Robin Hobb      1995   400</code></pre>
+<p>When I discovered Robin Hobb, I was surprised that I had not heard of her books before. They instantly drew me in and captured my imagination throughout the two trilogies.</p>
+</div>
+</div>
+<div id="analysis" class="section level2">
+<h2>Analysis</h2>
+<p>HTML and XML use similar approaches to parsing, while JSON is slightly different. Neither is particularly difficult to do (though I suspect multiple entries in each are a bit trickier to coax into a data frame).</p>
+<p>A far as the individual data frames, each are slightly different in that they have different column names (which I could have manually fixed), but otherwise the same:</p>
+<pre class="r"><code>str(book1)</code></pre>
+<pre><code>## 'data.frame':    1 obs. of  4 variables:
+##  $ Book Title  : chr &quot;Dragons of Autumn Twilight&quot;
+##  $ Authors     : chr &quot;Margaret Weiss, Tracy Hickman&quot;
+##  $ Publish Date: chr &quot;1984&quot;
+##  $ Pages       : chr &quot;448&quot;</code></pre>
+<pre class="r"><code>str(book2)</code></pre>
+<pre><code>## 'data.frame':    1 obs. of  4 variables:
+##  $ title    : chr &quot;The Fellowship Of The Ring&quot;
+##  $ author   : chr &quot;J.R.R. Tolkien&quot;
+##  $ published: chr &quot;1954&quot;
+##  $ pages    : chr &quot;423&quot;</code></pre>
+<pre class="r"><code>str(book3)</code></pre>
+<pre><code>## 'data.frame':    1 obs. of  4 variables:
+##  $ title    : chr &quot;Assassin's Apprentice&quot;
+##  $ author   : chr &quot;Robin Hobb&quot;
+##  $ published: chr &quot;1995&quot;
+##  $ pages    : chr &quot;400&quot;</code></pre>
+<p>Each variable is imported as a character, which is ok for now and can be coerced into its proper type later if we were to combine them into a single dataframe:</p>
+<pre class="r"><code># Fix column names for book1
+names(book1) &lt;- c(&quot;title&quot;,&quot;author&quot;,&quot;published&quot;,&quot;pages&quot;)
+
+# Bind into a single data frame
+books &lt;- rbind(book1,book2,book3)
+
+# Fix columns
+books$published &lt;- as.numeric(books$published)
+books$pages &lt;- as.numeric(books$pages)
+
+books</code></pre>
+<pre><code>##                            title                        author published
+## Book1 Dragons of Autumn Twilight Margaret Weiss, Tracy Hickman      1984
+## Book2 The Fellowship Of The Ring                J.R.R. Tolkien      1954
+## Book3      Assassin's Apprentice                    Robin Hobb      1995
+##       pages
+## Book1   448
+## Book2   423
+## Book3   400</code></pre>
+<hr />
 </div>
 
 
