@@ -1,0 +1,43 @@
+---
+title: "RSS Proof of Concept"
+author: "Adam Douglas"
+date: "10/11/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RCurl)
+library(XML)
+library(tidyverse)
+```
+
+## Outline
+
+If we can get a decent sample of blogs and read their RSS feeds, we can possibly mine them for category tags and filter that as a list of skills. The idea is that bloggers write about topics of most interest in Data Science (of which Data Science skills are a subset).
+
+### KDNuggets
+
+The only real Data Science blog I am familiar with is [KDNuggets](https://www.kdnuggets.com/news/index.html). They have an RSS feed [here](https://www.kdnuggets.com/feed).
+
+As a proof of concept, this is what I did:
+
+```{r}
+# Use RCurl to get the raw RSS/XML (XML package won't read https for some reason)
+kd <- getURL("https://www.kdnuggets.com/feed")
+
+# Save as a file
+write_file(kd,"kd.rss")
+
+# Parse the XML
+test <- xmlParse("kd.rss")
+
+# Use XPath to get the category
+categories <- data.frame(table(xpathSApply(test,"//category", xmlValue)))
+
+# Look at the categories
+categories %>% arrange(desc(Freq))
+```
+
+### Others?
+I am sure this can be repeated for other, legitimate DS blogs.

@@ -1,0 +1,8 @@
+{
+	"favorite books": [{
+		"title": "The Name of the Wind",
+		"authors": ["Patrick Rothfuss"],
+		"published": 2007,
+		"pages": 662
+	}]
+}
