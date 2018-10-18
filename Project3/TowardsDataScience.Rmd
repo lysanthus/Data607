@@ -1,0 +1,35 @@
+---
+title: "Towards Data Science"
+author: "Adam Douglas"
+date: "10/15/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RCurl)
+library(XML)
+```
+
+## Get URLs
+
+```{r}
+# Here is an archive of 2018
+urlList <- "https://towardsdatascience.com/archive/2018"
+
+# Retreive it and parse it for HTML
+HTML <- htmlParse(getURL(urlList, .opts=list(followlocation = TRUE)))
+
+# Parse out the article URLs
+
+
+```
+
+
+## Get tags
+
+```{r}
+# Parse tags from article
+xpathSApply(web,"//*[contains(@class,'tags')]/*", xmlValue)
+```
+
