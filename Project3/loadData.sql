@@ -1,21 +1,25 @@
-/* Create a staging table to read the raw data in from the CSV file */
+/* Create a staging table to read the raw data in from the CSV files */
 create table staging
 (
 	id	integer,
-	city varchar(20),
+	city varchar(50),
 	jobTitle varchar(100),
 	company varchar(100),
 	jobLocation varchar(100),
 	shortSummary varchar(1000),
 	salary numeric(10,2),
 	links varchar(100),
-	fullSummary varchar(4000)
+	fullSummary varchar(8000)
 );
 
-/* Read the CSV into the table */
+/* Read the Indeed.com CSV into the table */
 copy staging(id, city, jobTitle, company, jobLocation, shortSummary,
 			salary, links, fullSummary) 
 from '/Users/adamdouglas/Downloads/MyData2.csv' DELIMITER ',' CSV HEADER QUOTE '"';
+
+/* Read the ZipRecruiter CSV into the table */
+copy staging(id, city, fullSummary)
+from '/Users/adamdouglas/Downloads/ZipRecruiter.csv' DELIMITER ',' CSV HEADER QUOTE '"';
 
 /* Table definitions for final normalized forms */
 create table city

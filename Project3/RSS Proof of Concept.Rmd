@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(RCurl)
 library(XML)
 library(tidyverse)
+library(wordcloud)
 ```
 
 ## Outline
@@ -37,6 +38,16 @@ categories <- data.frame(table(xpathSApply(test,"//category", xmlValue)))
 
 # Look at the categories
 categories %>% arrange(desc(Freq))
+```
+
+## Words
+
+```{r}
+filtered <- categories %>% filter(!str_detect(Var1,"2018"),!str_detect(Var1,"Data Science"),Var1 != "Jobs", Var1 != "Online Education") %>% arrange(desc(Freq))
+
+filterd <- filtered[1:25,]
+
+wordcloud(filtered$Var1, filtered$Freq, colors = brewer.pal(8,'Dark2'),scale=c(2,.25))
 ```
 
 ### Others?

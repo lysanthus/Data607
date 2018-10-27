@@ -12,12 +12,521 @@
 	<atom:link href="https://www.kdnuggets.com/feed" rel="self" type="application/rss+xml" />
 	<link>https://www.kdnuggets.com</link>
 	<description>Machine Learning, Data Science, Big Data, Analytics, AI</description>
-	<lastBuildDate>Thu, 11 Oct 2018 21:12:18 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 20 Oct 2018 14:01:32 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.9.8</generator>
 	<item>
+		<title>Dr. Data Show Video: How Can You Trust AI?</title>
+		<link>https://www.kdnuggets.com/2018/10/dr-data-show-video-trusting-ai.html</link>
+		<pubDate>Sat, 20 Oct 2018 14:01:32 +0000</pubDate>
+		<dc:creator><![CDATA[Eric Siegel]]></dc:creator>
+				<category><![CDATA[2018 Oct News, Features]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Eric Siegel]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Predictive Analytics]]></category>
+		<category><![CDATA[Predictive Analytics World]]></category>
+		<category><![CDATA[Trust]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86504</guid>
+		<description><![CDATA[This new web series breaks the mold for data science infotainment, captivating the planet with short webisodes that cover the very best of machine learning and predictive analytics.]]></description>
+		</item>
+		<item>
+		<title>Start your journey into data science today</title>
+		<link>https://www.kdnuggets.com/2018/10/springboard-start-your-journey-into-data-science-today.html</link>
+		<pubDate>Fri, 19 Oct 2018 18:28:17 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Courses, Education]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Data Science Education]]></category>
+		<category><![CDATA[Online Education]]></category>
+		<category><![CDATA[Springboard]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86358</guid>
+		<description><![CDATA[Springboard’s Introduction to Data Science Course will help you build a strong foundation in R programming, communicate effectively by telling a story with data, clean and analyze large datasets, and more. Apply before Oct 22 and use code KDNUGGETSOCT500 for $500 Data Science Career Track.]]></description>
+		</item>
+		<item>
+		<title>Will Models Rule the World? Data Science Salon Miami, Nov 6-7</title>
+		<link>https://www.kdnuggets.com/2018/10/data-science-salon-miami-november.html</link>
+		<pubDate>Fri, 19 Oct 2018 16:30:44 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Meetings]]></category>
+		<category><![CDATA[Business]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Miami]]></category>
+		<category><![CDATA[Modeling]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86520</guid>
+		<description><![CDATA[This post is excerpted from the thoughts of Data Science Salon Miami speakers on the future of model-based decision-making.]]></description>
+		</item>
+		<item>
+		<title>Holy Grail of AI for Enterprise — Explainable AI</title>
+		<link>https://www.kdnuggets.com/2018/10/enterprise-explainable-ai.html</link>
+		<pubDate>Fri, 19 Oct 2018 15:30:52 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Opinions]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Enterprise]]></category>
+		<category><![CDATA[Explainable AI]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86524</guid>
+		<description><![CDATA[Explainable AI (XAI) is an emerging branch of AI where AI systems are made to explain the reasoning behind every decision made by them. We investigate some of its key benefits and design principles.]]></description>
+		</item>
+		<item>
+		<title>The Intuitions Behind Bayesian Optimization with Gaussian Processes</title>
+		<link>https://www.kdnuggets.com/2018/10/intuitions-behind-bayesian-optimization-gaussian-processes.html</link>
+		<pubDate>Fri, 19 Oct 2018 13:28:50 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Bayesian]]></category>
+		<category><![CDATA[Distribution]]></category>
+		<category><![CDATA[Hyperparameter]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Optimization]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86447</guid>
+		<description><![CDATA[Bayesian Optimization adds a Bayesian methodology to the iterative optimizer paradigm by incorporating a prior model on the space of possible target functions. This article introduces the basic concepts and intuitions behind Bayesian Optimization with Gaussian Processes.]]></description>
+		</item>
+		<item>
+		<title>McKinsey Datathon: The City Cup17 November, Amsterdam, Stockholm and Zurich. Apply Now</title>
+		<link>https://www.kdnuggets.com/2018/10/mckinsey-datathon-city-cup.html</link>
+		<pubDate>Fri, 19 Oct 2018 11:30:31 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory PS Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct News, Features]]></category>
+		<category><![CDATA[Amsterdam]]></category>
+		<category><![CDATA[Competition]]></category>
+		<category><![CDATA[Hackathon]]></category>
+		<category><![CDATA[McKinsey]]></category>
+		<category><![CDATA[Stockholm]]></category>
+		<category><![CDATA[Zurich]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86509</guid>
+		<description><![CDATA[While solving the challenge, you will gain insights into the types of problems that McKinsey Data Scientists solve daily to help their clients. Top prize is 5K Euro + conference attendance of your choice.]]></description>
+		</item>
+		<item>
+		<title>How to Solve the ModelOps Challenge</title>
+		<link>https://www.kdnuggets.com/2018/10/domino-how-solve-modelops-challenge.html</link>
+		<pubDate>Thu, 18 Oct 2018 18:28:38 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[Business Strategy]]></category>
+		<category><![CDATA[Business Value]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Domino]]></category>
+		<category><![CDATA[Modeling]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86498</guid>
+		<description><![CDATA[A recent study shows that while 85% believe data science will allow their companies to obtain or sustain a competitive advantage, only 5% are using data science extensively. Join this webinar, Nov 14, to find out why.]]></description>
+		</item>
+		<item>
+		<title>BI to AI: Getting Intelligent Insights to Everyone</title>
+		<link>https://www.kdnuggets.com/2018/10/bi-ai-intelligent-insights.html</link>
+		<pubDate>Thu, 18 Oct 2018 16:30:05 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[BI]]></category>
+		<category><![CDATA[Claudia Imhoff]]></category>
+		<category><![CDATA[Tellius]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86490</guid>
+		<description><![CDATA[Tellius is a Search and AI-Powered Analytics Platform that makes it easy for users to ask questions of their business data and discover insights using machine learning, with just a single click.]]></description>
+		</item>
+		<item>
+		<title>Apache Spark Introduction for Beginners</title>
+		<link>https://www.kdnuggets.com/2018/10/apache-spark-introduction-beginners.html</link>
+		<pubDate>Thu, 18 Oct 2018 15:30:12 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Apache Spark]]></category>
+		<category><![CDATA[Beginners]]></category>
+		<category><![CDATA[Hadoop]]></category>
+		<category><![CDATA[R]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86474</guid>
+		<description><![CDATA[An extensive introduction to Apache Spark, including a look at the evolution of the product, use cases, architecture, ecosystem components, core concepts and more.]]></description>
+		</item>
+		<item>
+		<title>New Jobs Sure to Emerge Alongside Artificial Intelligence</title>
+		<link>https://www.kdnuggets.com/2018/10/new-jobs-sure-emerge-alongside-artificial-intelligence.html</link>
+		<pubDate>Thu, 18 Oct 2018 14:29:26 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Opinions]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86449</guid>
+		<description><![CDATA[There’s a lot of doomsaying about AI pushing humans out of jobs and destroying entire industries. Is it as bad as all that? Maybe not!]]></description>
+		</item>
+		<item>
+		<title>Graphs Are The Next Frontier In Data Science</title>
+		<link>https://www.kdnuggets.com/2018/10/graphs-next-frontier-data-science.html</link>
+		<pubDate>Thu, 18 Oct 2018 13:28:25 +0000</pubDate>
+		<dc:creator><![CDATA[Reshama Shaikh]]></dc:creator>
+				<category><![CDATA[2018 Oct Opinions]]></category>
+		<category><![CDATA[Conference]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Graph Analytics]]></category>
+		<category><![CDATA[Neo4j]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86131</guid>
+		<description><![CDATA[GraphConnect 2018, Neo4j’s bi-annual conference, was held in New York City in mid-September. Read about what happened, and why graphs are the next big thing in data science. ]]></description>
+		</item>
+		<item>
+		<title>Top KDnuggets tweets, Oct 10-16: 7 Books to Grasp Mathematical Foundations of Data Science and Machine Learning; 6 Books Every Data Scientist Should Keep Nearby</title>
+		<link>https://www.kdnuggets.com/2018/10/top-tweets-oct10-16.html</link>
+		<pubDate>Wed, 17 Oct 2018 20:55:22 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory PS Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Top Stories, Tweets]]></category>
+		<category><![CDATA[Books]]></category>
+		<category><![CDATA[Mathematics]]></category>
+		<category><![CDATA[Top tweets]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86488</guid>
+		<description><![CDATA[Also Machine Learning Cheat Sheets; Top 8 Free Must-Read Books on Deep Learning.]]></description>
+		</item>
+		<item>
+		<title>Citizen Data Scientists &#124; Why Not DIY AI?</title>
+		<link>https://www.kdnuggets.com/2018/10/citizen-data-scientists-automl-webinar.html</link>
+		<pubDate>Wed, 17 Oct 2018 20:34:26 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory PS Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[About Gregory Piatetsky]]></category>
+		<category><![CDATA[Automated Machine Learning]]></category>
+		<category><![CDATA[Citizen Data Scientist]]></category>
+		<category><![CDATA[The Modeling Agency]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86475</guid>
+		<description><![CDATA[This live debate will feature AutoML advocate Gene Ferruzza (Valassis Digital), countered by Gregory Piatetsky-Shapiro (KDnuggets) who asks if you would really fly with a citizen pilot. Fasten your seatbelts and register now - seats are limited!]]></description>
+		</item>
+		<item>
+		<title>University of San Francisco: Assistant Professor, Tenure Track, Mathematics and Statistics [San Francisco, CA]</title>
+		<link>https://www.kdnuggets.com/jobs/18/10-17-usf-assistant-professor-mathematics-statistics.html</link>
+		<pubDate>Wed, 17 Oct 2018 18:02:21 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[CA]]></category>
+		<category><![CDATA[Mathematics]]></category>
+		<category><![CDATA[Professor]]></category>
+		<category><![CDATA[San Francisco]]></category>
+		<category><![CDATA[Statistics]]></category>
+		<category><![CDATA[University of San Francisco]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86470</guid>
+		<description><![CDATA[The University of San Francisco invites applications for a tenure-track Assistant Professor position to begin August 2019. We seek well-qualified candidates in the areas of applied mathematics or statistics, with a focus on the extraction of knowledge from data.]]></description>
+		</item>
+		<item>
+		<title>Mindstrong Health: Sr Data Scientist / Machine Learning, Statistics, Coding [Palo Alto, CA]</title>
+		<link>https://www.kdnuggets.com/jobs/18/10-17-mindstrong-health-data-scientist.html</link>
+		<pubDate>Wed, 17 Oct 2018 17:41:42 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[CA]]></category>
+		<category><![CDATA[Data Scientist]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Mindstrong Health]]></category>
+		<category><![CDATA[Palo Alto]]></category>
+		<category><![CDATA[Statistics]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86462</guid>
+		<description><![CDATA[Mindstrong Health is seeking a Sr Data Scientist in Palo Alto, CA, who is passionate about our mission, committed to excellence and excited to build a company that will address one of the greatest health challenges of our time.]]></description>
+		</item>
+		<item>
+		<title>The Definitive Guide to AI’s “Black Box” Problem</title>
+		<link>https://www.kdnuggets.com/2018/10/guide-ai-black-box-problem.html</link>
+		<pubDate>Wed, 17 Oct 2018 16:30:57 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct News, Features]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Basis Technology]]></category>
+		<category><![CDATA[ebook]]></category>
+		<category><![CDATA[Explainable AI]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86355</guid>
+		<description><![CDATA[The Amazing, Anti-Jargon, Insight Filled, and Totally Free Handbook to Integrating AI in Highly Regulated Industries - get it now.]]></description>
+		</item>
+		<item>
+		<title>Music for Data Scientists? Music by Data Scientists? &#8230;What&#8230;?!</title>
+		<link>https://www.kdnuggets.com/2018/10/music-data-scientists.html</link>
+		<pubDate>Wed, 17 Oct 2018 15:30:48 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Opinions]]></category>
+		<category><![CDATA[Foster Provost]]></category>
+		<category><![CDATA[Humor]]></category>
+		<category><![CDATA[Music]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86418</guid>
+		<description><![CDATA[Introducing Mean Reversion, an NYC-based songwriting duo comprising of data scientist Foster Provost and statistician Cliff Hurvich.]]></description>
+		</item>
+		<item>
+		<title>The Main Approaches to Natural Language Processing Tasks</title>
+		<link>https://www.kdnuggets.com/2018/10/main-approaches-natural-language-processing-tasks.html</link>
+		<pubDate>Wed, 17 Oct 2018 13:23:12 +0000</pubDate>
+		<dc:creator><![CDATA[Matthew Mayo]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Neural Networks]]></category>
+		<category><![CDATA[NLP]]></category>
+		<category><![CDATA[Text Classification]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86371</guid>
+		<description><![CDATA[Let's have a look at the main approaches to NLP tasks that we have at our disposal. We will then have a look at the concrete NLP tasks we can tackle with said approaches.]]></description>
+		</item>
+		<item>
+		<title>KDnuggets&#8482; News 18:n39, Oct 17: 10 Best Mobile Apps for Data Scientist; Vote in new poll: Largest dataset you analyzed?</title>
+		<link>https://www.kdnuggets.com/2018/n39.html</link>
+		<pubDate>Wed, 17 Oct 2018 11:15:25 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory PS Editor]]></dc:creator>
+				<category><![CDATA[KDnuggets 2018 Issues]]></category>
+		<category><![CDATA[Adversarial]]></category>
+		<category><![CDATA[Apps]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Mobile]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86433</guid>
+		<description><![CDATA[Also: An interesting explanation of why Adversarial examples arise; 5 clean code tips to improve your productivity; Github Python Data Science; and don't forget to vote in new poll: What was the largest dataset you analyzed?]]></description>
+		</item>
+		<item>
+		<title>[Webinar] Neural Network Fundamentals</title>
+		<link>https://www.kdnuggets.com/2018/10/databricks-webinar-neural-network-fundamentals.html</link>
+		<pubDate>Tue, 16 Oct 2018 18:28:23 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[Convolutional Neural Networks]]></category>
+		<category><![CDATA[Databricks]]></category>
+		<category><![CDATA[Neural Networks]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86288</guid>
+		<description><![CDATA[In this webinar, Oct 25, 2018, 10:00 am PST, we will apply your convolutional neural network using the ImageNet scenario. We will also review some of the ImageNet architectures and how convolutions work.]]></description>
+		</item>
+		<item>
+		<title>Accelerating Your Algorithms in Production [Webinar Replay]</title>
+		<link>https://www.kdnuggets.com/2018/10/accelerating-algorithms-production-webinar-replay.html</link>
+		<pubDate>Tue, 16 Oct 2018 17:30:26 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[ActiveState]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[Production]]></category>
+		<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86302</guid>
+		<description><![CDATA[Numerical algorithms are computationally demanding, which makes performance an important consideration when using Python for machine learning, especially as you move from desktop to production.]]></description>
+		</item>
+		<item>
+		<title>Adversarial Examples, Explained</title>
+		<link>https://www.kdnuggets.com/2018/10/adversarial-examples-explained.html</link>
+		<pubDate>Tue, 16 Oct 2018 15:30:53 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Adversarial]]></category>
+		<category><![CDATA[Deep Learning]]></category>
+		<category><![CDATA[Generative Adversarial Network]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86301</guid>
+		<description><![CDATA[Deep neural networks—the kind of machine learning models that have recently led to dramatic performance improvements in a wide range of applications—are vulnerable to tiny perturbations of their inputs. We investigate how to deal with these vulnerabilities.]]></description>
+		</item>
+		<item>
+		<title>Applied Data Science: Solving a Predictive Maintenance Business Problem Part 3</title>
+		<link>https://www.kdnuggets.com/2018/10/applied-data-science-solving-predictive-maintenance-business-problem-3.html</link>
+		<pubDate>Tue, 16 Oct 2018 14:29:32 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Business Context]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Predictive Maintenance]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86315</guid>
+		<description><![CDATA[In this post we will expand our analysis to multiple variables and then see how intuitions we develop during the exploration phase, can lead to generating new features for modelling.]]></description>
+		</item>
+		<item>
+		<title>GitHub Python Data Science Spotlight: High Level Machine Learning &#038; NLP, Ensembles, Command Line Viz &#038; Docker Made Easy</title>
+		<link>https://www.kdnuggets.com/2018/10/github-python-data-science-spotlight.html</link>
+		<pubDate>Tue, 16 Oct 2018 13:28:38 +0000</pubDate>
+		<dc:creator><![CDATA[Matthew Mayo]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Docker]]></category>
+		<category><![CDATA[Ensemble methods]]></category>
+		<category><![CDATA[fast.ai]]></category>
+		<category><![CDATA[GitHub]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[NLP]]></category>
+		<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86107</guid>
+		<description><![CDATA[This post spotlights 5 data science projects, all of which are open source and are present on GitHub repositories, focusing on high level machine learning libraries and low level support tools.]]></description>
+		</item>
+		<item>
+		<title>University of San Francisco: Postdoctoral Fellowship, Data Institute [San Francisco, CA]</title>
+		<link>https://www.kdnuggets.com/jobs/18/10-16-usf-postdoctoral-fellowship-data-institute.html</link>
+		<pubDate>Tue, 16 Oct 2018 12:29:14 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[CA]]></category>
+		<category><![CDATA[Fellowship]]></category>
+		<category><![CDATA[Postdoc]]></category>
+		<category><![CDATA[San Francisco]]></category>
+		<category><![CDATA[University of San Francisco]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86362</guid>
+		<description><![CDATA[University of San Francisco invites applications for a postdoctoral position starting in August 2019.]]></description>
+		</item>
+		<item>
+		<title>Bring Essential Data Governance Training to Your Team</title>
+		<link>https://www.kdnuggets.com/2018/10/tdwi-bring-essential-data-governance-training-your-team.html</link>
+		<pubDate>Mon, 15 Oct 2018 18:28:33 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Courses, Education]]></category>
+		<category><![CDATA[Data Governance]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Data Science Education]]></category>
+		<category><![CDATA[TDWI]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86293</guid>
+		<description><![CDATA[Technology trends such as big data, cloud, self-service, and agile challenge traditional data governance practices. TDWI Onsite Education sends top-rated instructors to teach the skills you need at your location. Discounts available for training scheduled prior to Dec 31, 2018.]]></description>
+		</item>
+		<item>
+		<title>DATAx Guide to Data Visualization in 2019</title>
+		<link>https://www.kdnuggets.com/2018/10/ieg-datax-guide-data-visualization.html</link>
+		<pubDate>Mon, 15 Oct 2018 17:27:26 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory PS Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct News, Features]]></category>
+		<category><![CDATA[Data Visualization]]></category>
+		<category><![CDATA[ebook]]></category>
+		<category><![CDATA[IE Group]]></category>
+		<category><![CDATA[New York City]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86337</guid>
+		<description><![CDATA[Get DATAx Guide to Data Visualization in 2019, the definitive foundation to help you prepare for the future of data visualization, AI and machine learning.  Also use KD200 to get extra $200 off DATAx New York early bird pricing until Oct 19.]]></description>
+		</item>
+		<item>
+		<title>Choose Your Own Adventure &#8211; Analytics On-boarding</title>
+		<link>https://www.kdnuggets.com/2018/10/choose-adventure-analytics-on-boarding.html</link>
+		<pubDate>Mon, 15 Oct 2018 15:30:42 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
+				<category><![CDATA[2018 Oct Opinions]]></category>
+		<category><![CDATA[Advice]]></category>
+		<category><![CDATA[Analytics]]></category>
+		<category><![CDATA[Data Science Skills]]></category>
+		<category><![CDATA[Data Scientist]]></category>
+		<category><![CDATA[Manager]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86284</guid>
+		<description><![CDATA[Lower the barriers to productivity by employing a “Choose your own adventure” approach to on-boarding your new analytics team members. ]]></description>
+		</item>
+		<item>
+		<title>Top Stories, Oct 8-14: 10 Best Mobile Apps for Data Scientist / Data Analysts; BIG, small or Right Data: Which is the proper focus?</title>
+		<link>https://www.kdnuggets.com/2018/10/top-news-week-1008-1014.html</link>
+		<pubDate>Mon, 15 Oct 2018 14:06:56 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Top Stories, Tweets]]></category>
+		<category><![CDATA[Top stories]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86321</guid>
+		<description><![CDATA[Also: How To Learn Data Science If You&#8217;re Broke; Top 8 Python Machine Learning Libraries; 9 Must-have skills you need to become a Data Scientist, updated; SQL, Python, &#038; R: All in One Platform; Using Confusion Matrices to Quantify the Cost of Being Wrong ]]></description>
+		</item>
+		<item>
+		<title>5 &#8220;Clean Code&#8221; Tips That Will Dramatically Improve Your Productivity</title>
+		<link>https://www.kdnuggets.com/2018/10/5-clean-code-tips-dramatically-improve-productivity.html</link>
+		<pubDate>Mon, 15 Oct 2018 13:32:23 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Efficiency]]></category>
+		<category><![CDATA[Programming]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86309</guid>
+		<description><![CDATA[TL;DR: If it isn’t tested, it’s broken; Choose meaningful names; Classes and functions should be small and obey the Single Responsibility Principle (SRP); Catch and handle exceptions, even if you don’t think you need to; Logs, logs, logs]]></description>
+		</item>
+		<item>
+		<title>Learn the top things to look for in an AI Vendor</title>
+		<link>https://www.kdnuggets.com/2018/10/datarobot-learn-top-things-ai-vendor.html</link>
+		<pubDate>Fri, 12 Oct 2018 18:26:55 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Webcasts & Webinars]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[DataRobot]]></category>
+		<category><![CDATA[Vendors]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86256</guid>
+		<description><![CDATA[In this webinar, Oct 25, find out why it's so hard to choose an AI vendor and show you what to consider as you seek a partner in AI. Additionally, get the details of how successfully implemented AI technologies at Wellen have transformed the way the company does business.]]></description>
+		</item>
+		<item>
+		<title>Machine learning — Is the emperor wearing clothes?</title>
+		<link>https://www.kdnuggets.com/2018/10/machine-learning-emperor-wearing-clothes.html</link>
+		<pubDate>Fri, 12 Oct 2018 15:30:25 +0000</pubDate>
+		<dc:creator><![CDATA[Cassie Kozyrkov]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[Algorithms]]></category>
+		<category><![CDATA[Beginners]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86271</guid>
+		<description><![CDATA[We take a look at the core concepts of Machine Learning, including the data, algorithm and optimization needed to get you started, with links to additional resources to help enhance your knowledge.]]></description>
+		</item>
+		<item>
+		<title>New Poll: What was the largest dataset you analyzed / data mined?</title>
+		<link>https://www.kdnuggets.com/2018/10/new-poll-largest-dataset.html</link>
+		<pubDate>Fri, 12 Oct 2018 14:15:09 +0000</pubDate>
+		<dc:creator><![CDATA[Gregory Piatetsky]]></dc:creator>
+				<category><![CDATA[2018 Oct News, Features]]></category>
+		<category><![CDATA[Big Data]]></category>
+		<category><![CDATA[Datasets]]></category>
+		<category><![CDATA[Largest]]></category>
+		<category><![CDATA[Poll]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86280</guid>
+		<description><![CDATA[New KDnuggets Poll is asking: What was the largest dataset you analyzed / data mined? Please vote and we will analyze the trends and publish the results.]]></description>
+		</item>
+		<item>
+		<title>We Sized Washington’s Edible Marijuana Market Using AI</title>
+		<link>https://www.kdnuggets.com/2018/10/washington-edible-marijuana-market-size-ai.html</link>
+		<pubDate>Fri, 12 Oct 2018 13:31:51 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Canada]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Law]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Washington]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86133</guid>
+		<description><![CDATA[As Canada legalizes marijuana, it might look to Washington to understand how pot sells. With the RAND Corp., we used machine learning to estimate how much THC- in pot is sold in Washington.]]></description>
+		</item>
+		<item>
+		<title>Join us for DataTech19, Scotland&#8217;s first technical data science conference as part of DataFest</title>
+		<link>https://www.kdnuggets.com/2018/10/datatech-scotland-technical-data-science-datafest.html</link>
+		<pubDate>Fri, 12 Oct 2018 12:30:23 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[2018 Oct Meetings]]></category>
+		<category><![CDATA[Data Science]]></category>
+		<category><![CDATA[Edinburgh]]></category>
+		<category><![CDATA[Scotland]]></category>
+		<category><![CDATA[UK]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86266</guid>
+		<description><![CDATA[DataTech19 will take place on 14th March in Edinburgh, at the National Museum of Scotland, bringing together analysts, developers, engineers and scientists from the public sector, academia and industry for technical presentations and discussions of important topics in data science.]]></description>
+		</item>
+		<item>
+		<title>Temple University: Faculty Positions (Assistant/Associate/Full Professor) [Philadelphia, PA]</title>
+		<link>https://www.kdnuggets.com/jobs/18/10-12-temple-university-faculty-positions.html</link>
+		<pubDate>Fri, 12 Oct 2018 12:02:13 +0000</pubDate>
+		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
+				<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[Faculty]]></category>
+		<category><![CDATA[PA]]></category>
+		<category><![CDATA[Philadelphia]]></category>
+		<category><![CDATA[Professor]]></category>
+		<category><![CDATA[Temple University]]></category>
+
+		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86275</guid>
+		<description><![CDATA[The Department of Computer and Information Sciences (CIS) at Temple University invites applications for multiple tenure-track faculty positions. Exceptional candidates at all ranks and areas of will be considered. Successful candidates will join world-class investigators.]]></description>
+		</item>
+		<item>
 		<title>SQL, Python, &#038; R: All in One Platform</title>
 		<link>https://www.kdnuggets.com/2018/10/mode-studio-sql-python-r-visualization-platform.html</link>
 		<pubDate>Thu, 11 Oct 2018 18:28:46 +0000</pubDate>
@@ -50,7 +559,7 @@
 		<link>https://www.kdnuggets.com/2018/10/machine-reading-comprehension-learning-ask-answer.html</link>
 		<pubDate>Thu, 11 Oct 2018 15:30:11 +0000</pubDate>
 		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[Tencent]]></category>
 		<category><![CDATA[Text Analysis]]></category>
 		<category><![CDATA[Text Classification]]></category>
@@ -77,7 +586,7 @@
 		<link>https://www.kdnuggets.com/2018/10/evaluating-business-value-predictive-models-modelplotpy.html</link>
 		<pubDate>Thu, 11 Oct 2018 13:28:45 +0000</pubDate>
 		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[Business Value]]></category>
 		<category><![CDATA[Data Visualization]]></category>
 		<category><![CDATA[Lift charts]]></category>
@@ -242,7 +751,7 @@
 		<link>https://www.kdnuggets.com/2018/10/top-python-machine-learning-libraries.html</link>
 		<pubDate>Tue, 09 Oct 2018 16:30:36 +0000</pubDate>
 		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[GitHub]]></category>
 		<category><![CDATA[Keras]]></category>
 		<category><![CDATA[Machine Learning]]></category>
@@ -256,7 +765,7 @@
 		<link>https://www.kdnuggets.com/2018/10/learn-data-science-broke.html</link>
 		<pubDate>Tue, 09 Oct 2018 15:30:56 +0000</pubDate>
 		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[Beginners]]></category>
 		<category><![CDATA[Career]]></category>
 		<category><![CDATA[Data Science]]></category>
@@ -270,7 +779,7 @@
 		<link>https://www.kdnuggets.com/2018/10/semantic-interoperability-training-ai-mixing-different-data-sources.html</link>
 		<pubDate>Tue, 09 Oct 2018 14:28:57 +0000</pubDate>
 		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[AI]]></category>
 		<category><![CDATA[Datasets]]></category>
 		<category><![CDATA[Healthcare]]></category>
@@ -311,7 +820,7 @@
 		<link>https://www.kdnuggets.com/2018/10/big-small-right-data.html</link>
 		<pubDate>Mon, 08 Oct 2018 15:30:24 +0000</pubDate>
 		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[Big Data]]></category>
 		<category><![CDATA[Big Data Analytics]]></category>
 		<category><![CDATA[Data Analytics]]></category>
@@ -336,7 +845,7 @@
 		<link>https://www.kdnuggets.com/2018/10/big-data-engineering-hype-train.html</link>
 		<pubDate>Mon, 08 Oct 2018 13:28:01 +0000</pubDate>
 		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
+				<category><![CDATA[2018 Oct Opinions]]></category>
 		<category><![CDATA[Big Data]]></category>
 		<category><![CDATA[Big Data Hype]]></category>
 		<category><![CDATA[Data Engineering]]></category>
@@ -360,513 +869,8 @@
 		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86064</guid>
 		<description><![CDATA[Colorado State University is seeking a Assistant Professor in Industrial and Organizational (IO) Psychology in Fort Collins, CO. Priority will be given to candidates with research expertise in Data Science and IO. Data Science is considered a multidisciplinary/interdisciplinary field that connects business, statistics, computer science and/or software programming, behavioral sciences, and communication.]]></description>
 		</item>
-		<item>
-		<title>Online Master’s in Applied Data Science From Syracuse</title>
-		<link>https://www.kdnuggets.com/2018/10/syracuse-online-masters-applied-data-science.html</link>
-		<pubDate>Fri, 05 Oct 2018 18:29:03 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Courses, Education]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[Master of Science]]></category>
-		<category><![CDATA[MS in Data Science]]></category>
-		<category><![CDATA[Syracuse University]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85879</guid>
-		<description><![CDATA[Syracuse University offers an online Master’s in Applied Data Science designed for data science professionals who are interested in advancing their technical data management and application skills without relocating. Apply by October 12.]]></description>
-		</item>
-		<item>
-		<title>Basic Image Data Analysis Using Python &#8211; Part 4</title>
-		<link>https://www.kdnuggets.com/2018/10/basic-image-analysis-python-p4.html</link>
-		<pubDate>Fri, 05 Oct 2018 15:30:53 +0000</pubDate>
-		<dc:creator><![CDATA[Mohammed Innat]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Computer Vision]]></category>
-		<category><![CDATA[Image Processing]]></category>
-		<category><![CDATA[Python]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86027</guid>
-		<description><![CDATA[Accessing the internal component of digital images using Python packages helps the user understand its properties, as well as its nature.]]></description>
-		</item>
-		<item>
-		<title>Why do I Call Myself a Data Scientist?</title>
-		<link>https://www.kdnuggets.com/2018/10/why-call-myself-data-scientist.html</link>
-		<pubDate>Fri, 05 Oct 2018 14:28:50 +0000</pubDate>
-		<dc:creator><![CDATA[Favio Vazquez]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[Data Scientist]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86048</guid>
-		<description><![CDATA[Claimed as the “sexiest job of the 21st Century” here I’ll discuss the reasons for my proclamation as a Data Scientist, beyond the hype.]]></description>
-		</item>
-		<item>
-		<title>A Concise Explanation of Learning Algorithms with the Mitchell Paradigm</title>
-		<link>https://www.kdnuggets.com/2018/10/mitchell-paradigm-concise-explanation-learning-algorithms.html</link>
-		<pubDate>Fri, 05 Oct 2018 13:15:30 +0000</pubDate>
-		<dc:creator><![CDATA[Matthew Mayo]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Algorithms]]></category>
-		<category><![CDATA[Learning]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Tom Mitchell]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86028</guid>
-		<description><![CDATA[A single quote from Tom Mitchell can shed light on both the abstract concept and concrete implementations of machine learning algorithms.]]></description>
-		</item>
-		<item>
-		<title>University of Nebraska at Omaha: Faculty Position in Computer Science [Omaha, NE]</title>
-		<link>https://www.kdnuggets.com/jobs/18/10-05-university-nebraska-omaha-faculty-position.html</link>
-		<pubDate>Fri, 05 Oct 2018 12:18:27 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[Jobs]]></category>
-		<category><![CDATA[Computer Science]]></category>
-		<category><![CDATA[Faculty]]></category>
-		<category><![CDATA[NE]]></category>
-		<category><![CDATA[Omaha]]></category>
-		<category><![CDATA[University of Nebraska at Omaha]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86058</guid>
-		<description><![CDATA[University of Nebraska at Omaha is seeking a Faculty Position in Computer Science. Areas of particular interest include, but are not limited to, machine learning, data science, visual analytics, artificial intelligence and their translational application in real-world contexts.]]></description>
-		</item>
-		<item>
-		<title>Understand Why ODSC is the Most Recommended Conference for Applied Data Science</title>
-		<link>https://www.kdnuggets.com/2018/10/odsc-understand-most-recommended-conference-applied-data-science.html</link>
-		<pubDate>Thu, 04 Oct 2018 18:29:31 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Meetings]]></category>
-		<category><![CDATA[CA]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[ODSC]]></category>
-		<category><![CDATA[San Francisco]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85908</guid>
-		<description><![CDATA[Running 4 days, 40 training sessions, 50 workshops, and over 200 speakers, an ODSC conference offers unparalleled depth and breadth in deep learning, machine learning, and other data science topics. Save 20% offer ends tomorrow. Register now!]]></description>
-		</item>
-		<item>
-		<title>Big Data Day Camp: Big Data Tools &#038; Techniques (October 25-26)</title>
-		<link>https://www.kdnuggets.com/2018/10/ucsd-big-data-day-camp-tools-techniques-october.html</link>
-		<pubDate>Thu, 04 Oct 2018 17:29:29 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Courses, Education]]></category>
-		<category><![CDATA[Apache Spark]]></category>
-		<category><![CDATA[Big Data]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[Hadoop]]></category>
-		<category><![CDATA[Kafka]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85954</guid>
-		<description><![CDATA[Learn how to use data to make wise, actionable data driven decisions! Our first 2-day camp, Big Data Tools &#038; Techniques, is October 25-26 at Qualcomm Institute, UCSD.]]></description>
-		</item>
-		<item>
-		<title>UnitedHealth Group: Sr .Net Web Developer, UHC E&#038;I [Indianapolis, IN or Green Bay, WI]</title>
-		<link>https://www.kdnuggets.com/jobs/18/10-04-unitedhealth-group-web-developer.html</link>
-		<pubDate>Thu, 04 Oct 2018 15:34:55 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[Jobs]]></category>
-		<category><![CDATA[Developer]]></category>
-		<category><![CDATA[Green Bay]]></category>
-		<category><![CDATA[IN]]></category>
-		<category><![CDATA[Indianapolis]]></category>
-		<category><![CDATA[UnitedHealth Group]]></category>
-		<category><![CDATA[WI]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86023</guid>
-		<description><![CDATA[UnitedHealth Group is seeking a Senior .Net Web Developer in Indianapolis, IN or Green Bay, WI, with expert knowledge in MS SQL Development (SQL queries, Stored Procedures, Functions, etc.) to serve as a primarily C# .Net web developer (Front and Backend).]]></description>
-		</item>
-		<item>
-		<title>Semantic Segmentation: Wiki, Applications and Resources</title>
-		<link>https://www.kdnuggets.com/2018/10/semantic-segmentation-wiki-applications-resources.html</link>
-		<pubDate>Thu, 04 Oct 2018 15:30:53 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[Image Recognition]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Object Detection]]></category>
-		<category><![CDATA[Segmentation]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85983</guid>
-		<description><![CDATA[An extensive overview covering the features of Semantic Segmentation and possible uses for it, including GeoSensing, Autonomous Drive, Facial Recognition and more.]]></description>
-		</item>
-		<item>
-		<title>UnitedHealth Group: UHC Digital Director of Project Management [Minnetonka, MN]</title>
-		<link>https://www.kdnuggets.com/jobs/18/10-04-unitedhealth-group-uhc-digital-director-project-management.html</link>
-		<pubDate>Thu, 04 Oct 2018 15:28:52 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[Jobs]]></category>
-		<category><![CDATA[Director]]></category>
-		<category><![CDATA[Minnetonka]]></category>
-		<category><![CDATA[MN]]></category>
-		<category><![CDATA[Project Manager]]></category>
-		<category><![CDATA[UnitedHealth Group]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86020</guid>
-		<description><![CDATA[UnitedHealth Group is seeking a UHC Digital Director of Project Management in Minnetonka, MN. Are you a leader and subject matter expertise in project management, scope definition, risk identification, methodology and resource allocation or facilitation?]]></description>
-		</item>
-		<item>
-		<title>UnitedHealth Group: UHC Digital Project Manager [Minnetonka, MN]</title>
-		<link>https://www.kdnuggets.com/jobs/18/10-04-unitedhealth-group-uhc-digital-project-manager.html</link>
-		<pubDate>Thu, 04 Oct 2018 15:21:10 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[Jobs]]></category>
-		<category><![CDATA[Minnetonka]]></category>
-		<category><![CDATA[MN]]></category>
-		<category><![CDATA[Project Manager]]></category>
-		<category><![CDATA[UnitedHealth Group]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=86018</guid>
-		<description><![CDATA[UnitedHealth Group is seeking a UHC Digital Project Manager in Minnetonka, MN. Join us and put your advanced knowledge and skills to work guiding project scope, time frames, funding needs, staffing requirements, allotment of resources and more.]]></description>
-		</item>
-		<item>
-		<title>3 Stages of Creating Smart</title>
-		<link>https://www.kdnuggets.com/2018/10/3-stages-creating-smart.html</link>
-		<pubDate>Thu, 04 Oct 2018 14:27:38 +0000</pubDate>
-		<dc:creator><![CDATA[William Schmarzo]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[IoT]]></category>
-		<category><![CDATA[Products]]></category>
-		<category><![CDATA[Smart Data]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85967</guid>
-		<description><![CDATA[The technology is advancing at a pace that should enable any company to create “smart” products, things and spaces. But how does one go about actually creating smart?]]></description>
-		</item>
-		<item>
-		<title>Society of Machines: The Complex Interaction of Agents</title>
-		<link>https://www.kdnuggets.com/2018/10/society-machines-complex-interaction-agents.html</link>
-		<pubDate>Thu, 04 Oct 2018 13:29:42 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[AI]]></category>
-		<category><![CDATA[Modeling]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85964</guid>
-		<description><![CDATA[In this new series we’ll focus on collective interaction of two or more machines. This interaction of machines can be among each other or with the environment.]]></description>
-		</item>
-		<item>
-		<title>Top KDnuggets tweets, Sep 26 &#8211; Oct 2: Why building your own Deep Learning Computer is 10x cheaper than AWS; 6 Steps To Write Any Machine Learning Algorithm</title>
-		<link>https://www.kdnuggets.com/2018/10/top-tweets-sep26-oct02.html</link>
-		<pubDate>Wed, 03 Oct 2018 19:28:43 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Top Stories, Tweets]]></category>
-		<category><![CDATA[Top tweets]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85999</guid>
-		<description><![CDATA[Also: New Book: Math for #MachineLearning; How to visualize decision tree; Causation in a Nutshell; Machine Learning Cheat Sheets; Brief History of Machine Learning Models Explainability]]></description>
-		</item>
-		<item>
-		<title>Data Science at Northwestern</title>
-		<link>https://www.kdnuggets.com/2018/10/northwestern-ms-data-science.html</link>
-		<pubDate>Wed, 03 Oct 2018 18:28:55 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Courses, Education]]></category>
-		<category><![CDATA[Master of Science]]></category>
-		<category><![CDATA[MS in Data Science]]></category>
-		<category><![CDATA[Northwestern]]></category>
-		<category><![CDATA[Online Education]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85724</guid>
-		<description><![CDATA[In Northwestern's Online MS in Data Science, you’ll learn from an accomplished faculty of leading industry experts, choose from a wide range of specializations and electives to suit your goals, and earn your master’s degree entirely online.]]></description>
-		</item>
-		<item>
-		<title>Top 3 Trends in Deep Learning</title>
-		<link>https://www.kdnuggets.com/2018/10/mathworks-top-3-trends-deep-learning.html</link>
-		<pubDate>Wed, 03 Oct 2018 16:30:10 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Cloud Computing]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[MathWorks]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85530</guid>
-		<description><![CDATA[We investigate the intermediate stage of deep learning, and the trends that are emerging in response to the challenges at this stage, including Interoperability  and the multi-deployment options.]]></description>
-		</item>
-		<item>
-		<title>Linear Regression in the Wild</title>
-		<link>https://www.kdnuggets.com/2018/10/linear-regression-wild.html</link>
-		<pubDate>Wed, 03 Oct 2018 15:30:43 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Algorithms]]></category>
-		<category><![CDATA[Linear Regression]]></category>
-		<category><![CDATA[Python]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85979</guid>
-		<description><![CDATA[We take a look at how to use linear regression when the dependent variables have measurement errors.]]></description>
-		</item>
-		<item>
-		<title>Sequence Modeling with Neural Networks &#8211; Part I</title>
-		<link>https://www.kdnuggets.com/2018/10/sequence-modeling-neural-networks-part-1.html</link>
-		<pubDate>Wed, 03 Oct 2018 13:29:48 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Neural Networks]]></category>
-		<category><![CDATA[NLP]]></category>
-		<category><![CDATA[Recurrent Neural Networks]]></category>
-		<category><![CDATA[Sequences]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85969</guid>
-		<description><![CDATA[In the context of this post, we will focus on modeling sequences as a well-known data structure and will study its specific learning framework.]]></description>
-		</item>
-		<item>
-		<title>Upcoming Meetings in AI, Analytics, Big Data, Data Science, Deep Learning, Machine Learning: October and Beyond</title>
-		<link>https://www.kdnuggets.com/2018/10/upcoming-meetings-ai-analytics-big-data-science-machine-learning.html</link>
-		<pubDate>Wed, 03 Oct 2018 12:38:27 +0000</pubDate>
-		<dc:creator><![CDATA[Gregory Piatetsky]]></dc:creator>
-				<category><![CDATA[2018 Oct Meetings]]></category>
-		<category><![CDATA[AI]]></category>
-		<category><![CDATA[Analytics]]></category>
-		<category><![CDATA[Boston]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[London]]></category>
-		<category><![CDATA[Meetings]]></category>
-		<category><![CDATA[New York City]]></category>
-		<category><![CDATA[San Francisco]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85976</guid>
-		<description><![CDATA[Coming soon: INFORMS Chicago, Deep Learning Summit Toronto, ODSC West SF, Accelerate AI SF, Big Data Week London, AI Conference London, PAW Business London, Crunch Budapest, and more.]]></description>
-		</item>
-		<item>
-		<title>KDnuggets&#8482; News 18:n37, Oct 3: Mathematics of Machine Learning; Effective Transfer Learning for NLP; Path Analysis with R</title>
-		<link>https://www.kdnuggets.com/2018/n37.html</link>
-		<pubDate>Wed, 03 Oct 2018 11:12:48 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[KDnuggets 2018 Issues]]></category>
-		<category><![CDATA[Computer Vision]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Mathematics]]></category>
-		<category><![CDATA[NLP]]></category>
-		<category><![CDATA[R]]></category>
-		<category><![CDATA[Transfer Learning]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85972</guid>
-		<description><![CDATA[Also: Introducing VisualData: A Search Engine for Computer Vision Datasets; Raspberry Pi IoT Projects for Fun and Profit; Recent Advances for a Better Understanding of Deep Learning; Basic Image Data Analysis Using Python - Part 3; Introduction to Deep Learning]]></description>
-		</item>
-		<item>
-		<title>Unleash a Faster Python on Your Data</title>
-		<link>https://www.kdnuggets.com/2018/10/intel-unleash-faster-python-data.html</link>
-		<pubDate>Tue, 02 Oct 2018 18:29:03 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct News, Features]]></category>
-		<category><![CDATA[Analytics]]></category>
-		<category><![CDATA[Intel]]></category>
-		<category><![CDATA[Python]]></category>
-		<category><![CDATA[scikit-learn]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85733</guid>
-		<description><![CDATA[Intel provides optimized Scikit-learn, the most used Python package for classical machine learning. Get faster scikit-learn through Intel® Distribution for Python*]]></description>
-		</item>
-		<item>
-		<title>DevOps 2.0: Applying Machine Learning in the CI/CD Chain</title>
-		<link>https://www.kdnuggets.com/2018/10/h1-devops-applying-machine-learning-cicd-chain.html</link>
-		<pubDate>Tue, 02 Oct 2018 17:28:22 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct News, Features]]></category>
-		<category><![CDATA[ActiveState]]></category>
-		<category><![CDATA[Development]]></category>
-		<category><![CDATA[DevOps]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Software]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85785</guid>
-		<description><![CDATA[Explore how ML can be implemented in your organization, so you can (for example) enable the automated assessment of test results for far more complex criteria, such as defining thresholds based on statistical significance rather than just presence/absence of specific criteria.]]></description>
-		</item>
-		<item>
-		<title>How to Create a Simple Neural Network in Python</title>
-		<link>https://www.kdnuggets.com/2018/10/simple-neural-network-python.html</link>
-		<pubDate>Tue, 02 Oct 2018 15:30:56 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Neural Networks]]></category>
-		<category><![CDATA[Python]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85916</guid>
-		<description><![CDATA[The best way to understand how neural networks work is to create one yourself. This article will demonstrate how to do just that.]]></description>
-		</item>
-		<item>
-		<title>5 Reasons Why You Should Use Cross-Validation in Your Data Science Projects</title>
-		<link>https://www.kdnuggets.com/2018/10/5-reasons-cross-validation-data-science-projects.html</link>
-		<pubDate>Tue, 02 Oct 2018 13:28:10 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Cross-validation]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85946</guid>
-		<description><![CDATA[In cross-validation, we do more than one split. We can do 3, 5, 10 or any K number of splits. Those splits called Folds, and there are many strategies we can create these folds with.]]></description>
-		</item>
-		<item>
-		<title>Top Stories, Sep 24-30: Machine Learning Cheat Sheets; Learning the Mathematics of Machine Learning</title>
-		<link>https://www.kdnuggets.com/2018/10/top-news-week-0924-0930.html</link>
-		<pubDate>Mon, 01 Oct 2018 21:33:03 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Top Stories, Tweets]]></category>
-		<category><![CDATA[Top stories]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85937</guid>
-		<description><![CDATA[Also: Math for Machine Learning; Introducing Path Analysis Using R; Introduction to Deep Learning; Essential Math for Data Science: Why and How; 6 Steps To Write Any Machine Learning Algorithm From Scratch: Perceptron Case Study]]></description>
-		</item>
-		<item>
-		<title>Learn Business Analytics at Clark University – affordable excellence</title>
-		<link>https://www.kdnuggets.com/2018/10/clark-business-analytics-affordable-excellence.html</link>
-		<pubDate>Mon, 01 Oct 2018 18:29:53 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Courses, Education]]></category>
-		<category><![CDATA[Business Analytics]]></category>
-		<category><![CDATA[Clark University]]></category>
-		<category><![CDATA[MA]]></category>
-		<category><![CDATA[MS in Business Analytics]]></category>
-		<category><![CDATA[Worcester]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85776</guid>
-		<description><![CDATA[Move your career forward in one of the fields with the largest demand. Business Analytics at Clark University will give you the skills employers demand by teaching you how to synthesize data into powerful information.]]></description>
-		</item>
-		<item>
-		<title>Dr. Data Show Video: Why Machine Learning Is the Coolest Science</title>
-		<link>https://www.kdnuggets.com/2018/10/dr-data-show-video-machine-learning-coolest-science.html</link>
-		<pubDate>Mon, 01 Oct 2018 18:01:15 +0000</pubDate>
-		<dc:creator><![CDATA[Eric Siegel]]></dc:creator>
-				<category><![CDATA[2018 Oct News, Features]]></category>
-		<category><![CDATA[Eric Siegel]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Predictive Analytics]]></category>
-		<category><![CDATA[Predictive Analytics World]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85925</guid>
-		<description><![CDATA[This new web series breaks the mold for data science infotainment, captivating the planet with short webisodes that cover the very best of machine learning and predictive analytics.]]></description>
-		</item>
-		<item>
-		<title>TEXATA Data Analytics Summit 2018 &#8211; Exclusive 30% KDnuggets Discount</title>
-		<link>https://www.kdnuggets.com/2018/10/texata-data-analytics-summit-2018.html</link>
-		<pubDate>Mon, 01 Oct 2018 17:29:47 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Meetings]]></category>
-		<category><![CDATA[Austin]]></category>
-		<category><![CDATA[Data Analytics]]></category>
-		<category><![CDATA[Summit]]></category>
-		<category><![CDATA[TEXATA]]></category>
-		<category><![CDATA[TX]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85831</guid>
-		<description><![CDATA[The 4th Annual TEXATA Summit is only 3 weeks away! Join us on Friday October 19th in Austin, Texas to learn and connect with your fellow Industry Leaders.]]></description>
-		</item>
-		<item>
-		<title>Robust Quality – Powerful Integration of Data Science and Process Engineering</title>
-		<link>https://www.kdnuggets.com/2018/10/robust-quality-powerful-integration-data-science-process-engineering.html</link>
-		<pubDate>Mon, 01 Oct 2018 17:01:37 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct News, Features]]></category>
-		<category><![CDATA[Data Science]]></category>
-		<category><![CDATA[Integration]]></category>
-		<category><![CDATA[Process]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85669</guid>
-		<description><![CDATA[The book by Rajesh Jugulum provides a strong connection between the concepts in data science and process engineering that is necessary to ensure better quality levels and takes you through a systematic approach to measure holistic quality with several case studies.]]></description>
-		</item>
-		<item>
-		<title>A Right to Reasonable Inferences</title>
-		<link>https://www.kdnuggets.com/2018/10/right-reasonable-inferences.html</link>
-		<pubDate>Mon, 01 Oct 2018 16:30:15 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Opinions, Interviews]]></category>
-		<category><![CDATA[Europe]]></category>
-		<category><![CDATA[GDPR]]></category>
-		<category><![CDATA[Privacy]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85907</guid>
-		<description><![CDATA[As shown in this paper, individuals are granted little control over how their personal data is used to draw inferences about them. Compared to other types, inferences are effectively ‘economy class’ personal data in the General Data Protection Regulation (GDPR).]]></description>
-		</item>
-		<item>
-		<title>Recent Advances for a Better Understanding of Deep Learning</title>
-		<link>https://www.kdnuggets.com/2018/10/recent-advances-deep-learning.html</link>
-		<pubDate>Mon, 01 Oct 2018 15:30:08 +0000</pubDate>
-		<dc:creator><![CDATA[Dan Clark]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[Explained]]></category>
-		<category><![CDATA[Flat Minima]]></category>
-		<category><![CDATA[Linear Networks]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Optimization]]></category>
-		<category><![CDATA[SGD]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85853</guid>
-		<description><![CDATA[A summary of the newest deep learning trends, including Non Convex Optimization, Overparametrization and Generalization, Generative Models, Stochastic Gradient Descent (SGD) and more.]]></description>
-		</item>
-		<item>
-		<title>More Effective Transfer Learning for NLP</title>
-		<link>https://www.kdnuggets.com/2018/10/more-effective-transfer-learning-nlp.html</link>
-		<pubDate>Mon, 01 Oct 2018 12:57:49 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Oct Tutorials, Overviews]]></category>
-		<category><![CDATA[Neural Networks]]></category>
-		<category><![CDATA[NLP]]></category>
-		<category><![CDATA[Transfer Learning]]></category>
-		<category><![CDATA[Word Embeddings]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85903</guid>
-		<description><![CDATA[Until recently, the natural language processing community was lacking its ImageNet equivalent — a standardized dataset and training objective to use for training base models.]]></description>
-		</item>
-		<item>
-		<title>Join us in Toronto for the Deep Learning Summit, Save with KDnuggets</title>
-		<link>https://www.kdnuggets.com/2018/09/rework-toronto-deep-learning-summit-save-with-kdnuggets.html</link>
-		<pubDate>Fri, 28 Sep 2018 18:28:25 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Sep Meetings]]></category>
-		<category><![CDATA[AI]]></category>
-		<category><![CDATA[Canada]]></category>
-		<category><![CDATA[Deep Learning]]></category>
-		<category><![CDATA[Government]]></category>
-		<category><![CDATA[RE.WORK]]></category>
-		<category><![CDATA[Toronto]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85757</guid>
-		<description><![CDATA[RE•WORK's world-famous Deep Learning Summit is taking place in Toronto this October with the addition of a new AI for Government track. Don't forget to use code KDNUGGETS at the checkout for 20% off your pass. See you there!]]></description>
-		</item>
-		<item>
-		<title>Math for Machine Learning</title>
-		<link>https://www.kdnuggets.com/2018/09/rhan-math-machine-learning-ebook.html</link>
-		<pubDate>Fri, 28 Sep 2018 17:29:33 +0000</pubDate>
-		<dc:creator><![CDATA[Matt Mayo Editor]]></dc:creator>
-				<category><![CDATA[2018 Sep News, Features]]></category>
-		<category><![CDATA[ebook]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Mathematics]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85717</guid>
-		<description><![CDATA[This ebook explains the math involved and introduces you directly to the foundational topics in machine learning.]]></description>
-		</item>
-		<item>
-		<title>Learning mathematics of Machine Learning: bridging the gap</title>
-		<link>https://www.kdnuggets.com/2018/09/learning-mathematics-machine-learning.html</link>
-		<pubDate>Fri, 28 Sep 2018 16:30:10 +0000</pubDate>
-		<dc:creator><![CDATA[Ajit Jaokar]]></dc:creator>
-				<category><![CDATA[2018 Sep Opinions, Interviews]]></category>
-		<category><![CDATA[AI]]></category>
-		<category><![CDATA[Machine Learning]]></category>
-		<category><![CDATA[Mathematics]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85869</guid>
-		<description><![CDATA[We outline the four key areas of Maths in Machine Learning and begin to answer the question: how can we start with high school maths and use that knowledge to bridge the gap with maths for AI and Machine Learning?]]></description>
-		</item>
-		<item>
-		<title>Win KDnuggets Free Pass to Artificial Intelligence Conference London, Oct 8-11, 2018</title>
-		<link>https://www.kdnuggets.com/2018/09/ai-conference-london-kdnuggets-pass.html</link>
-		<pubDate>Fri, 28 Sep 2018 16:19:43 +0000</pubDate>
-		<dc:creator><![CDATA[Matthew Mayo]]></dc:creator>
-				<category><![CDATA[2018 Sep Meetings]]></category>
-		<category><![CDATA[AI]]></category>
-		<category><![CDATA[London]]></category>
-		<category><![CDATA[O'Reilly]]></category>
-		<category><![CDATA[UK]]></category>
-
-		<guid isPermaLink="false">https://www.kdnuggets.com/?p=85884</guid>
-		<description><![CDATA[Enter now to win a free KDnuggets Pass to AI Conference AI, Oct 8-11. Submit your entry by Oct 5, 2018, for your chance!]]></description>
-		</item>
 	</channel>
 </rss>
 
-<!-- Dynamic page generated in 1.064 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2018-10-11 20:00:14 -->
+<!-- Dynamic page generated in 1.050 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2018-10-20 10:01:39 -->

@@ -1,0 +1,164 @@
+---
+title: "Data 607 - Week 9 Assignment"
+author: "Adam Douglas"
+date: "10/24/2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(jsonlite)
+library(lubridate)
+library(kableExtra)
+```
+
+## Assignment
+Our assignment is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it to an R dataframe.
+
+For this exercise, I chose the NY Times Bestseller Lists via the books API[^1].
+
+### API 
+To get data from the API we construct a URL with the parameters we need to pass:
+
+```{r}
+# The NY Times best-seller list API URL
+baseURL <- "https://api.nytimes.com/svc/books/v3/lists.json"
+
+# The specific list type. We're going to look at hard-cover fiction
+listing <- "hardcover-fiction"
+
+# The date for the very first listing (per the API)
+asOf <- "2008-06-08"
+
+# Now we build the final URL. Our API key is stored as an option
+url <- paste(baseURL, "?", "&api-key=", getOption("NYTimesAPIKey"),
+             "&list=", listing, "&date=", asOf, sep = "")
+```
+
+Now that we have contructed the proper URL, we can get the JSON reply from the API.
+
+```{r}
+# Get the JSON from the URL
+res <- fromJSON(url)
+
+# Get the results in a data frame
+books <- res$results
+```
+
+## The results
+
+Looking at the data frame that the `fromJSON` function gave us, we see that in some cases the variables we were given were actually lists.
+
+```{r}
+# Check the structure
+class(books$book_details)
+```
+
+The lists actually seem to contain data frames with additional details about the book.
+
+```{r}
+class(books$book_details[[1]])
+
+books$book_details[[1]]
+```
+
+The same sort of thing applies to the *reviews* column:
+
+```{r}
+class(books$reviews[[1]])
+
+books$reviews[[1]]
+```
+
+Looking at the *isbns* column, however, there appears to be several observations in each data frame (and some with none), meaning that one book can have several ISBNs. This makes sense because books may have different covers, have international editions, large-print, etc. So, we will leave these nested.
+
+```{r}
+class(books$isbns[[1]])
+
+books$isbns[[1]]
+
+books$isbns[[2]]
+```
+
+For the first two lists, we can extract the data frames into one larger data frame (since there is only one observation in each)
+
+```{r}
+# First the details
+details <- bind_rows(books$book_details)
+
+# Then the reviews
+reviews <- bind_rows(books$reviews)
+```
+
+As expected, these have the same number of records as our main data frame
+
+```{r}
+dim(details)
+
+dim(reviews)
+```
+
+Now we can combine those data frames with the main frame, combining the data on each book into a more convenient format.
+
+```{r}
+books <- bind_cols(books, details, reviews)
+```
+
+Now, with the data in a convenient format, we can do whatever analysis we wish or, if required, return to the API and retreive more data:
+
+```{r, cache=TRUE}
+#################################################
+# Get all 52 weekly best seller lists into one  #
+# single data frame for analysis                #
+#################################################
+
+# Get a character vector of 52 weeks, as the list is pulished every week
+dates <- rep(ymd("2008-06-08"),52)
+
+for (i in 2:52){
+    dates[i] <- dates[i-1] + weeks(1)
+}
+
+# Create a list for our result data frames to be stored in
+staging <- list(data.frame(c(1,1)))
+
+# Get the API data for each week
+for (x in 1:52){
+  # Get the week
+  asOf <- as.character(dates[x])
+  
+  # Build the URL for the week
+  url <- paste(baseURL, "?", "&api-key=", getOption("NYTimesAPIKey"),
+             "&list=", listing, "&date=", asOf, sep = "")
+  
+  # Get the data and parse it
+  res <- fromJSON(url)
+  staging[[x]] <- res$results
+  
+  # A small pause
+  Sys.sleep(1)
+  
+}
+
+# Combine the data frames
+allBooks <- bind_rows(staging)
+
+# Now fix the data as we did above by pulling out the sublists
+details <- bind_rows(allBooks$book_details)
+reviews <- bind_rows(allBooks$reviews)
+allBooks <- bind_cols(allBooks, details, reviews)
+```
+
+Now with a year's worth of best sellers, we can do whatever analysis we want. For example, looking at which publisher had the most best-sellers each week:
+
+```{r}
+knitr::kable(allBooks %>% group_by(bestsellers_date, publisher) %>% tally() %>% top_n(1,n), col.names = c("Week","Publisher","# Books on Bestseller List"),
+          caption="NY Times Bestseller List (Hardcover Fiction) Top Publishers") %>%
+  kable_styling(bootstrap_options = "striped", full_width = FALSE, position = "left")
+```
+
+
+[^1]: http://developer.nytimes.com/books_api.json

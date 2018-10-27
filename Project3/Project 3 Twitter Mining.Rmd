@@ -1,0 +1,79 @@
+---
+title: "Project 3 Twitter Mining"
+output:
+  pdf_document: default
+  html_document: default
+---
+#Access variables for twitter (commented out)
+```{r}
+#ckey <- ""
+#secret_key <-""
+#ctoken <- ""
+#secret_token <- ""
+```
+
+#Install the necessary packages
+```{r}
+library(tm)
+library(twitteR)
+library(wordcloud)
+library(RColorBrewer)
+library(e1071)
+library(class)
+```
+
+#Set up the twitter connection from account
+```{r}
+setup_twitter_oauth(ckey,secret_key,ctoken,secret_token)
+```
+#List of words we're searching for in tweets
+```{r}
+data_science_list <- c("datascience", "data science", "data", "science", "scientist", "datascientist")
+```
+# pull n tweets from twitter
+```{r}
+data.science.tweets <- searchTwitter(data_science_list, n = 100000, lang = 'en')
+```
+# get text data
+```{r}
+data.science.text <- sapply(data.science.tweets, function(x) x$getText())
+```
+# clean text data
+
+# remove emojis etc - turns to UTF-8
+```{r}
+data.science.text <- iconv(data.science.text, 'UTF-8', 'ASCII')
+```
+# Create corpus
+```{r}
+ds.corpus <- Corpus(VectorSource(data.science.text))
+```
+# doc term matrix, includes stop words to not include in matrix
+```{r}
+term.doc.matrix <- TermDocumentMatrix(ds.corpus,
+                                      control = list(removePunctuation = TRUE,
+                                                     stopwords = c("datascience", "data science", "data", "science", "scientist", "datascientist","datascientists", "right", "now", "abc", "via", "back","words", "lifehacks", "can", "big", "nice", "users","free",'using','good','mit','new','need','art','build','great','cool','next','https','http', 
+                                                                   stopwords('english')),
+                                                                   removeNumbers = TRUE,
+                                                                   tolower = TRUE))
+
+```
+# Convert into matrix
+```{r}
+term.doc.matrix <- as.matrix(term.doc.matrix)
+```
+
+# word counts in decreasing order
+```{r}
+word.freq <- sort(rowSums(term.doc.matrix), decreasing = TRUE)
+dm <- data.frame(word = names(word.freq), freq = word.freq)
+```
+# Select top 25 words
+```{r}
+dm <- dm[1:25,]
+```
+# word cloud
+```{r}
+wordcloud(dm$word,dm$freq, random.order = FALSE, colors = brewer.pal(8,'Dark2'))
+```
+
