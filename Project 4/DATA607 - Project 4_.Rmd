@@ -2,7 +2,9 @@
 title: "DATA 607 - Project 4"
 author: "Adam Douglas"
 date: "11/2/2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
