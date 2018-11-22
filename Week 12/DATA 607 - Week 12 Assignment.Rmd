@@ -1,0 +1,123 @@
+---
+title: "Data 607 - Week 12 Assignment"
+author: "Adam Douglas"
+date: "11/19/2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(RPostgreSQL)
+library(mongolite)
+```
+
+## Relational Database
+
+Our data comes courtesy of the `nycflights13` database and is a large recordset with all the flights arriving and departing from NYC airports in 2013.
+
+The data has been preloaded in a relational database (PostgreSQL) and our goal is to ferry the data from the relational database to a NoSQL database (MongoDB). First we set up our connection to PostgreSQL:
+
+```{r SQL setup}
+# Set up our connection to PostgreSQL
+host <- "localhost"
+usr <- "postgres"
+pass <- getOption("pass")
+port <- 5432
+database <- "nycflights"
+```
+
+Then we get the data and load it into a data frame:
+
+```{r Get Data, cache=TRUE}
+# Get all data from the flights table
+conn <- dbConnect(RPostgreSQL::PostgreSQL(),
+                  host = host, dbname = database, 
+                  user = usr, password = pass)
+
+flights <- dbGetQuery(conn, "select * from flights") 
+```
+
+Finally, we close our connection:
+
+```{r Close Connection, results='hide'}
+dbDisconnect(conn)
+```
+
+## NoSQL Database
+
+To get our data into MongoDB, we use a similar methodology as above with PostgreSQL by creating a connection object. For this, we use the `mongolite` package:
+
+```{r open mongo}
+# Open the connection
+mon <- mongo(collection="flights", db="Data607")
+```
+
+Now we can easily load the data using that connection object:
+
+```{r}
+mon$insert(flights)
+```
+
+Our load went nice and smoothly, with all `r nrow(flights)` records being loaded.
+
+## Some Analysis in MongoDB
+
+Now that we loaded the data into MongoDB, we can query collection we created via the same connection object we used to load the documents. As an example, let's display one document:
+
+```{r}
+rec <- data.frame(mon$iterate()$one())
+rec
+```
+
+We can query the collection in a manner similar to a relational database, though the syntax is quite different.
+
+Here, we count the total flights by month:
+
+```{r}
+byMonth <- 
+  mon$aggregate('[  
+                  {
+                    "$group": 
+                    {
+                      "_id": "$month", 
+                      "num_flights": 
+                      {
+                        "$sum": 1
+                      }
+                    }
+                  },
+                  {
+                    "$sort":
+                      {
+                        "_id": 1
+                      }
+                  },
+                  {
+                    "$project":
+                    {
+                      "_id": 0,
+                      "num_flights": 1,
+                      "month": "$_id"
+                    }
+                  }
+              ]')
+
+head(byMonth)
+```
+
+And then we can use R to display the data if we choose:
+
+```{r}
+byMonth %>% ggplot(aes(x=as.factor(month), y=num_flights)) +
+  geom_col(fill="darkgreen") + ggtitle("Flights by Month") + ylab("# Flights") +
+  xlab("Month")
+```
+
+Finally, we ensure we close our connections:
+
+```{r}
+mon$disconnect()
+```
