@@ -66,20 +66,19 @@ Let's look at what we have so far on a map:
 
 ```{r}
 ## Need to normalize the color scale for comparison across years
-maxD <- max(opioids$deaths)
-minD <- min(opioids$deaths)
+breaks <- c(0, seq(25,250,by=25))
 
 opioids %>% filter(year == "2013") %>%
   NYMap("deaths","Opioid Overdose Deaths","2013",
-        "Deaths\nPer 100,000")
+        "Deaths\nPer 100,000", breaks)
 
 opioids %>% filter(year == "2014") %>%
   NYMap("deaths","Opioid Overdose Deaths","2014",
-        "Deaths\nPer 100,000")
+        "Deaths\nPer 100,000", breaks)
 
 opioids %>% filter(year == "2015") %>%
   NYMap("deaths","Opioid Overdose Deaths","2015",
-        "Deaths\nPer 100,000")
+        "Deaths\nPer 100,000", breaks)
 ```
 
 There are a few counties which seem to have most of the overdose deaths.
@@ -89,18 +88,78 @@ We get these data from NYS also[^2].
 
 ```{r get unemployment data, message=FALSE}
 unemployment <- read_csv("NY_unemployment.csv")
-glimpse(unemployment)
+unemployment
 ```
 
-###Poverty Data
-The Census Bureau gives us this data[^3].
+This data is already in a tidy format, so we don't need to do anything to it.
 
 ```{r}
-poverty <- read_csv("")
+breaks <- c(1, seq(2,12,by=1))
+
+unemployment %>% filter(year == "2013") %>%
+  NYMap("meanRate","Unemployment Rate","2013",
+        "Rate", breaks)
+
+unemployment %>% filter(year == "2014") %>%
+  NYMap("meanRate","Unemployment Rate","2014",
+        "Rate", breaks)
+
+unemployment %>% filter(year == "2015") %>%
+  NYMap("meanRate","Unemployment Rate","2015",
+        "Rate", breaks)
 ```
 
 
+###Poverty and Income Data
+The Census Bureau gives us this data[^3].
 
+```{r, message=FALSE}
+rawPoverty <- read_csv(url("https://raw.githubusercontent.com/lysanthus/Data607/master/Final/poverty.csv"))
+
+rawPoverty$county <- tolower(rawPoverty$county)
+
+rawPoverty
+```
+
+First, we have several variables. In this analysis we will look at only poverty rate and median incomes for each county.
+
+Secondly, we have data for 2013 and 2016 only. So we will have to linearly impute the middle values of 2014 and 2015 as equally distant from 2013 and 2016:
+
+```{r}
+# 2013 values
+pov13 <- rawPoverty %>% filter(year == 2013) %>% select(county,pct = `All Ages in Poverty Percent`, inc = `Median Household Income in Dollars`)
+
+# 2016 values
+pov16 <- rawPoverty %>% filter(year == 2016) %>% select(county,pct = `All Ages in Poverty Percent`, inc = `Median Household Income in Dollars`)
+
+# Fix income values by removing $ and ,
+pov13$inc <- as.numeric(str_replace_all(pov13$inc,"\\$|,",""))
+pov16$inc <- as.numeric(str_replace_all(pov16$inc,"\\$|,",""))
+
+# Combine our data frames
+poverty <- inner_join(pov13, pov16, by=c("county" = "county"),
+                       suffix = c("_2013","_2016"))
+
+# Compute changes and impute interim values
+poverty <- poverty %>%
+  mutate(povChg = pct_2016 - pct_2013, incChg = inc_2016 - inc_2013,
+         povIncrement = povChg / 3, incIncrement = incChg / 3,
+         pct_2014 = pct_2013 + povIncrement, pct_2015 = pct_2016 - povIncrement,
+         inc_2014 = inc_2013 + incIncrement, inc_2015 = inc_2016 - incIncrement)
+
+# Tidy the data
+poverty <- poverty %>% 
+  gather(key="year",
+         value="value",
+         pct_2013,pct_2014,pct_2015,pct_2016,
+         inc_2013,inc_2014,inc_2015,inc_2016)
+
+poverty <- poverty %>% separate(year,c("measure","yr"),"_")
+
+poverty <- poverty %>% spread(key="measure",value="value") %>% select(county, year = yr, income = inc, poverty = pct)
+
+poverty
+```
 
 ## Analysis
 
