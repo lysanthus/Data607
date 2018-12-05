@@ -1,0 +1,120 @@
+---
+title: "DATA 607 - Final Project"
+author: "Adam Douglas"
+date: "12/1/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+source("NYMap.R")
+```
+
+## Goal
+
+The goal of this project is to look at rates of Opioid overdoses within New York state and compare to a variety of socioeconomic factors to see if there is a correlation between them.
+
+## Introduction
+The opioid crisis is bad, etc. Put some summary statistics here from other sources.
+
+## Data Sources
+### Overdose Deaths
+New York State tracks opioid overdose deaths by county on their website[^1]. To get this data we need to scrape it from the site.
+
+```{r scrape opioid data, message=FALSE}
+library(rvest)
+rawHTML <- read_html("https://www.health.ny.gov/statistics/opioid/data/d2.htm")
+```
+
+We can then parse it to get our data:
+```{r parse opioid data}
+# Get the table from the HTML
+rawTable <- html_table(rawHTML)[[1]]
+
+### Fix up the data frame ###
+# Fix column names
+colnames(rawTable) <- c("county","deaths_2013","deaths_2014",
+                        "deaths_2015","total_deaths","avgPop",
+                        "rate","adjRate")
+
+# Remove region titles and region totals
+opioids <- rawTable[-grep("[[:space:]]?Reg",rawTable$county),]
+```
+
+Now we need to tidy the data:
+```{r tidy opioid}
+# Put years into rows
+opioids <- gather(opioids, key="year", value = "deaths",
+                  deaths_2013, deaths_2014, deaths_2015)
+
+opioids$year <- as.numeric(str_extract(opioids$year,"[0-9]+"))
+
+# Standardize our counties
+opioids$county <- tolower(opioids$county)
+opioids$county <- str_replace(opioids$county,"\\.","")
+
+# Fix column types
+opioids$total_deaths <- as.numeric(str_replace_all(opioids$total_deaths,"(\\*|,)",""))
+opioids$deaths <- as.numeric(str_replace_all(opioids$deaths,"(\\*|,)",""))
+opioids$avgPop <- as.numeric(str_replace_all(opioids$avgPop,"(\\*|,)",""))
+opioids$rate <- as.numeric(str_replace_all(opioids$rate,"(\\*|,)",""))
+opioids$adjRate <- as.numeric(str_replace_all(opioids$adjRate,"(\\*|,)",""))
+```
+
+Let's look at what we have so far on a map:
+
+```{r}
+## Need to normalize the color scale for comparison across years
+maxD <- max(opioids$deaths)
+minD <- min(opioids$deaths)
+
+opioids %>% filter(year == "2013") %>%
+  NYMap("deaths","Opioid Overdose Deaths","2013",
+        "Deaths\nPer 100,000")
+
+opioids %>% filter(year == "2014") %>%
+  NYMap("deaths","Opioid Overdose Deaths","2014",
+        "Deaths\nPer 100,000")
+
+opioids %>% filter(year == "2015") %>%
+  NYMap("deaths","Opioid Overdose Deaths","2015",
+        "Deaths\nPer 100,000")
+```
+
+There are a few counties which seem to have most of the overdose deaths.
+
+### Unemployment Data
+We get these data from NYS also[^2].
+
+```{r get unemployment data, message=FALSE}
+unemployment <- read_csv("NY_unemployment.csv")
+glimpse(unemployment)
+```
+
+###Poverty Data
+The Census Bureau gives us this data[^3].
+
+```{r}
+poverty <- read_csv("")
+```
+
+
+
+
+## Analysis
+
+```{r}
+joint <- inner_join(opioids,unemployment,by=c("county" = "county","year" = "year"))
+```
+
+```{r}
+joint %>% ggplot(aes(x=meanRate, y=deaths, col=as.factor(year))) +
+  geom_point() + geom_smooth(method="lm", linetype=2, se=FALSE)
+```
+
+
+## Works Cited
+[^1]: https://www.health.ny.gov/statistics/opioid/data/d2.htm
+[^2]: https://data.ny.gov/Economic-Development/Local-Area-Unemployment-Statistics-Beginning-1976/5hyu-bdh8
+[^3]: https://www.census.gov/data-tools/demo/saipe/saipe.html?s_appName=saipe&map_yearSelector=2013&map_geoSelector=aa_c&s_state=36&s_year=2016,2013
