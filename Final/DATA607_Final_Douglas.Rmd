@@ -1,33 +1,41 @@
 ---
 title: "DATA 607 - Final Project"
 author: "Adam Douglas"
-date: "12/1/2018"
-output: html_document
+date: "12/9/2018"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 source("NYMap.R")
 ```
 
 ## Goal
 
-The goal of this project is to look at rates of Opioid overdoses within New York state and compare to a variety of socioeconomic factors to see if there is a correlation between them.
+The goal of this project is to look at rates of opioid overdoses within New York state and compare to a variety of socioeconomic factors to see if there is a correlation between them.
 
 ## Introduction
-The opioid crisis is bad, etc. Put some summary statistics here from other sources.
+The opioid crisis is a well-documented public health crisis. It seems that one only needs to turn on the television or radio to hear something about how the rate of overdose deaths due to opioids (e.g. oxycodone, heroin, etc.) has been on the rise for years. Meanwhile local, state, and federal governments have struggled to find solutions to the crisis.
+
+Drug addiction has traditionally been stigmatized as being a "social disease", one which causes embarassment to both individuals and their families. Addiction has also been associated with homelessness and poverty, portrayed as something that happens to the lower income levels. Only recently has that perception started to change.
 
 ## Data Sources
+Data for this analysis comes in three parts, each broken out by county: data on number of overdose deaths, unemployment data, and data on poverty and income.
+
 ### Overdose Deaths
-New York State tracks opioid overdose deaths by county on their website[^1]. To get this data we need to scrape it from the site.
+New York State tracks opioid overdose deaths by county on their website[^1]. They offer data for years 2013, 2014, and 2015 by county. To get this data we need to scrape it from the site.
 
 ```{r scrape opioid data, message=FALSE}
 library(rvest)
 rawHTML <- read_html("https://www.health.ny.gov/statistics/opioid/data/d2.htm")
 ```
 
-We can then parse it to get our data:
+Once we have the raw HTML, we can then parse it to get our raw data:
 ```{r parse opioid data}
 # Get the table from the HTML
 rawTable <- html_table(rawHTML)[[1]]
@@ -42,7 +50,7 @@ colnames(rawTable) <- c("county","deaths_2013","deaths_2014",
 opioids <- rawTable[-grep("[[:space:]]?Reg",rawTable$county),]
 ```
 
-Now we need to tidy the data:
+Next we tidy the data:
 ```{r tidy opioid}
 # Put years into rows
 opioids <- gather(opioids, key="year", value = "deaths",
@@ -60,58 +68,24 @@ opioids$deaths <- as.numeric(str_replace_all(opioids$deaths,"(\\*|,)",""))
 opioids$avgPop <- as.numeric(str_replace_all(opioids$avgPop,"(\\*|,)",""))
 opioids$rate <- as.numeric(str_replace_all(opioids$rate,"(\\*|,)",""))
 opioids$adjRate <- as.numeric(str_replace_all(opioids$adjRate,"(\\*|,)",""))
+
+head(opioids)
 ```
 
-Let's look at what we have so far on a map:
-
-```{r}
-## Need to normalize the color scale for comparison across years
-breaks <- c(0, seq(25,250,by=25))
-
-opioids %>% filter(year == "2013") %>%
-  NYMap("deaths","Opioid Overdose Deaths","2013",
-        "Deaths\nPer 100,000", breaks)
-
-opioids %>% filter(year == "2014") %>%
-  NYMap("deaths","Opioid Overdose Deaths","2014",
-        "Deaths\nPer 100,000", breaks)
-
-opioids %>% filter(year == "2015") %>%
-  NYMap("deaths","Opioid Overdose Deaths","2015",
-        "Deaths\nPer 100,000", breaks)
-```
-
-There are a few counties which seem to have most of the overdose deaths.
+Our variable of interest here is `rate` which is the number of deaths per 100,000 population. Normalizing to this rate allows us to compare counties of different sizes.
 
 ### Unemployment Data
-We get these data from NYS also[^2].
+Next we turn to unemployment rates. We can also get these data from New York State[^2]. This time, the data is in a much easier to retrieve CSV format:
 
 ```{r get unemployment data, message=FALSE}
 unemployment <- read_csv("NY_unemployment.csv")
 unemployment
 ```
 
-This data is already in a tidy format, so we don't need to do anything to it.
-
-```{r}
-breaks <- c(1, seq(2,12,by=1))
-
-unemployment %>% filter(year == "2013") %>%
-  NYMap("meanRate","Unemployment Rate","2013",
-        "Rate", breaks)
-
-unemployment %>% filter(year == "2014") %>%
-  NYMap("meanRate","Unemployment Rate","2014",
-        "Rate", breaks)
-
-unemployment %>% filter(year == "2015") %>%
-  NYMap("meanRate","Unemployment Rate","2015",
-        "Rate", breaks)
-```
-
+Luckily these data are already in a tidy format, so we don't need to do anything to them.
 
 ###Poverty and Income Data
-The Census Bureau gives us this data[^3].
+Finally, we gather our poverty and income data from the US Census Bureau[^3]. This data is also in a CSV format, which makes importing a bit easier:
 
 ```{r, message=FALSE}
 rawPoverty <- read_csv(url("https://raw.githubusercontent.com/lysanthus/Data607/master/Final/poverty.csv"))
@@ -121,9 +95,9 @@ rawPoverty$county <- tolower(rawPoverty$county)
 rawPoverty
 ```
 
-First, we have several variables. In this analysis we will look at only poverty rate and median incomes for each county.
+The CSV contains several variables, however for this analysis we will look at only poverty rate and median incomes for each county.
 
-Secondly, we have data for 2013 and 2016 only. So we will have to linearly impute the middle values of 2014 and 2015 as equally distant from 2013 and 2016:
+Also, we have values for 2013 and 2016 only. So we will linearly impute the middle values of 2014 and 2015 as equally distant from 2013 and 2016. We also transform the values to thousands of dollars, to make visualization easier:
 
 ```{r}
 # 2013 values
@@ -158,20 +132,228 @@ poverty <- poverty %>% separate(year,c("measure","yr"),"_")
 
 poverty <- poverty %>% spread(key="measure",value="value") %>% select(county, year = yr, income = inc, poverty = pct)
 
+poverty$year <- as.numeric(poverty$year)
+
+# Adjust income to 1,000's scale
+poverty$income <- round(poverty$income/1000,2)
+
 poverty
+```
+
+Now our data is tidy and ready to use.
+
+```{r clean-up, echo=FALSE, results='hold', message=FALSE, error=FALSE}
+rm(list=c("pov13","pov16","rawHTML","rawPoverty","rawTable"))
+```
+
+## Visualization
+
+Now that we have all three data sets loaded, let's look at them and see what we patterns we can easily detect.
+
+First, we look at our first variable of interest: overdose deaths, and plot it on a map of New York State:
+
+```{r}
+## Breaking out data into bins
+breaks <- c(0, seq(4,28,by=4))
+
+opioids %>% filter(year == "2013") %>%
+  NYMap("rate","Opioid Overdose Deaths","2013",
+        "Deaths\nPer 100,000", breaks)
+
+opioids %>% filter(year == "2014") %>%
+  NYMap("rate","Opioid Overdose Deaths","2014",
+        "Deaths\nPer 100,000", breaks)
+
+opioids %>% filter(year == "2015") %>%
+  NYMap("rate","Opioid Overdose Deaths","2015",
+        "Deaths\nPer 100,000", breaks)
+```
+
+Looking at the maps, there are a few counties with a larger number of overdose deaths than others. Specifically, Sullivan, Erie, and Dutchess counties seem to be some of the worst areas.
+
+Let's do the same for our unemployment data:
+
+```{r}
+breaks <- c(1, seq(2,12,by=1))
+
+unemployment %>% filter(year == "2013") %>%
+  NYMap("meanRate","Unemployment Rate","2013",
+        "Rate", breaks)
+
+unemployment %>% filter(year == "2014") %>%
+  NYMap("meanRate","Unemployment Rate","2014",
+        "Rate", breaks)
+
+unemployment %>% filter(year == "2015") %>%
+  NYMap("meanRate","Unemployment Rate","2015",
+        "Rate", breaks)
+```
+
+Surprisingly, the unemployment data in some of the worst counties for opioid deaths isn't very bad. In fact, it seems to get better from 2013 to 2015.
+
+How about the poverty rate? Let's map those as well:
+
+```{r}
+breaks <- c(5, seq(10,35,by=5))
+
+poverty %>% filter(year == "2013") %>%
+  NYMap("poverty","Poverty Rate","2013",
+        "Rate", breaks)
+
+poverty %>% filter(year == "2014") %>%
+  NYMap("poverty","Poverty Rate","2014",
+        "Rate", breaks)
+
+poverty %>% filter(year == "2015") %>%
+  NYMap("poverty","Poverty Rate","2015",
+        "Rate", breaks)
+```
+
+The poverty rate also appears to be low in counties where opioid deaths are high. We can also look at the median incomes of each county:
+
+```{r}
+breaks <- c(30, seq(40,110,by=10))
+
+poverty %>% filter(year == "2013") %>%
+  NYMap("income","Median Income","2013",
+        "Thousands of Dollars", breaks)
+
+poverty %>% filter(year == "2014") %>%
+  NYMap("income","Median Income","2014",
+        "Thousands of Dollars", breaks)
+
+poverty %>% filter(year == "2015") %>%
+  NYMap("income","Median Income","2015",
+        "Thousands of Dollars", breaks)
+```
+
+We see rather high median incomes in some of the problematic counties, which we mostly expected from the poverty levels above.
+
+## Analysis
+
+To support our analysis, we will join our data frames so we have all the variables we will be using in a single data frame.
+
+```{r join data frames}
+joint <- inner_join(opioids,unemployment,
+                    by=c("county" = "county","year" = "year")) %>%
+  inner_join(poverty, by=c("county" = "county","year" = "year"))
+```
+
+Let's start by plotting deaths versus unemployment rates.
+
+```{r}
+joint %>%
+  ggplot(aes(x=meanRate, y=rate, col=as.factor(year))) +
+  geom_point() + 
+  facet_wrap(~ year, nrow = 3) + scale_color_discrete("Year") +
+  ylab("Opioid Deaths") + xlab("Unemployment Rate")
+```
+
+There appears to be only a slight linear relationship here. In fact, the variables do not seem to be very correlated:
+
+```{r}
+joint %>% filter(year==2013) %>%
+  {cor(.$rate, .$meanRate)}
+
+joint %>% filter(year==2014) %>%
+  {cor(.$rate, .$meanRate)}
+
+joint %>% filter(year==2015) %>%
+  {cor(.$rate, .$meanRate)}
+```
+
+Next we look at poverty rates:
+
+```{r}
+joint %>%
+  ggplot(aes(x=poverty, y=rate, col=as.factor(year))) +
+  geom_point() + 
+  facet_wrap(~ year, nrow = 3) + scale_color_discrete("Year") +
+  ylab("Opioid Deaths") + xlab("Poverty Rate")
+```
+
+The `poverty` variable seems to have little in the way of a linear relationship with the number of opioid deaths as well.
+
+```{r}
+joint %>% filter(year==2013) %>%
+  {cor(.$rate, .$poverty)}
+
+joint %>% filter(year==2014) %>%
+  {cor(.$rate, .$poverty)}
+
+joint %>% filter(year==2015) %>%
+  {cor(.$rate, .$poverty)}
+```
+
+Finally, we explore median income:
+
+```{r}
+joint %>%
+  ggplot(aes(x=income, y=rate, col=as.factor(year))) +
+  geom_point() + 
+  facet_wrap(~ year, nrow = 3) + scale_color_discrete("Year") +
+  ylab("Opioid Deaths") + xlab("Median Income (1,000's $)")
+```
+
+Strangely, income too appears to have somewhat of a relationship to the number of overdose deaths.
+
+```{r}
+joint %>% filter(year==2013) %>%
+  {cor(.$rate, .$income)}
+
+joint %>% filter(year==2014) %>%
+  {cor(.$rate, .$income)}
+
+joint %>% filter(year==2015) %>%
+  {cor(.$rate, .$income)}
 ```
 
 ## Analysis
 
-```{r}
-joint <- inner_join(opioids,unemployment,by=c("county" = "county","year" = "year"))
-```
+Let's build a model to see how the variables relate to the overdose death rate. For brevity, we'll use 2013 specifically:
 
 ```{r}
-joint %>% ggplot(aes(x=meanRate, y=deaths, col=as.factor(year))) +
-  geom_point() + geom_smooth(method="lm", linetype=2, se=FALSE)
+# Linear model for 2013
+mod_income1 <- lm(rate ~ income + poverty + meanRate, data = joint[which(joint$year==2013),])
+
+summary(mod_income1)
 ```
 
+Here we see that none of the variables are statistically significant. However, because they could definitely have some level of colinearity, we'll remove the worst one (`meanRate`) and run a new model.
+
+```{r}
+# Linear model for 2013 (minus unemployment rate)
+mod_income2 <- lm(rate ~ income + poverty, data = joint[which(joint$year==2013),])
+
+summary(mod_income2)
+```
+
+Now it appears that the `income` variable's p-value has decreased, yet `poverty` remains statistically insignificant.
+
+Now we will do a simple regression model with `income` only to see how it describes the opioid death rates.
+
+```{r}
+# Linear model for 2013 (only income)
+mod_income3 <- lm(rate ~ income, data = joint[which(joint$year==2013),])
+
+summary(mod_income3)
+```
+
+Finally, even the `income` variable alone does not seem statistically significant enough in this model to demonstrate a linear relationship.
+
+## Conclusions
+All of the regression models have shown that there is **no statistically significant linear relationship between the death rate of opioids and either median income, unemployment, or poverty rates**.
+
+Is this what we expected to see? That depends on your point of view. As mentioned in the introduction, addiction has been stigmatized as a personal failing, a flaw in character that allows someone to become addicted. That characterization has led to the widespread association with the lower rungs of the socioeconomic ladder.
+
+Our results, seem to run counter to that. They seem to support the more modern and enlightened view that addiction is not a problem common only to the disadvantaged.
+
+## Caveats and Assumptions
+Some assumptions were taken in the course of this analysis.
+
+First, we have assumed that the opioid death rate is a good surrogate for opioid *use*. It is possible that use and deaths are not as tightly correlated as assumed. If we were looking at more recent data, one could make an argument that with the widespread use of Naloxone, and an increase of education about overdose dangers, that this doesn't hold true. However, back in 2013 it seems a somewhat safe assumption.
+
+Secondly, we are treating each county as a monolithic entity. There can be, however, significant differences in demographics *within* a county that may make summary statistics like we are using less accurate.
 
 ## Works Cited
 [^1]: https://www.health.ny.gov/statistics/opioid/data/d2.htm

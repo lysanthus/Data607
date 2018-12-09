@@ -14,7 +14,8 @@ NYMap <- function(df, x, title = NULL, sub = NULL, leg = NULL, br = NULL){
                                 breaks=br)), 
                  col = "black") + 
     scale_fill_brewer(leg, type = "seq", palette = "RdYlGn"
-                      ,direction = -1, drop = FALSE) +
+                      ,direction = -1, drop = FALSE,
+                      labels = scales::comma) +
     coord_fixed(1.3) +
     theme(panel.grid.major = element_blank(), 
           panel.grid.minor = element_blank(),
